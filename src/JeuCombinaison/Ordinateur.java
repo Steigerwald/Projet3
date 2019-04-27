@@ -33,6 +33,8 @@ public class Ordinateur extends Affichage {
         System.out.println();
         System.out.println("C'est au tour de l'ordinateur: ");
         System.out.println(" *********************** L'ORDINATEUR COMMENCE A CHERCHER VOTRE CODE SECRET ******************************");
+        System.out.println();
+        System.out.println(" *********************** L'ORDINATEUR A FAIT SA PROPOSITION ******************************");
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
             int nbreH=1+(int)(Math.random()*8);
@@ -72,67 +74,44 @@ public class Ordinateur extends Affichage {
      * @param nber number of code numbers
      * @return boolean false or true for continuer
      */
-    public boolean afficherResultat(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
-        String [] atrouver=new String [nber];
-        for (int i=0;i<nber;i++) {
-            atrouver[i] = "=";
-        }
+    public void afficherResultat(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
         String joinedResult = String.join("",resultat);
         String joinedarray2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println();
-        System.out.println("C'est au tour de l'ordinateur: ");
-        System.out.println("*************** ORDINATEUR ANALYSE ET PROPOSE UN CODE **************");
-        System.out.println(" *********************** RESULTAT ********************************");
+        affichageOrdiPropose();
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ joinedResult);
-        boolean continuer;
-        if (Arrays.equals(resultat,atrouver)) {
-            continuer = false;
-            System.out.println();
-            System.out.println("******************** FELICIATIONS A L'ORDINATEUR ****************************");
-            System.out.println("Bravo a l'Ordinateur qui  a trouvé le code secret en " +turn+" tour(s)!!");
-        } else if (turn==tmax){
-            System.out.println();
-            System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
-            System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
-            String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
-            System.out.println("La solution était: "+ joinedarray1);
-            continuer = false;
-        } else {
-            System.out.println("Il reste "+ (tmax-turn) + " tentative(s) à l'ordinateur pour trouver le code secret");
-            continuer=true;
-        }
-        return continuer;
     }
 
-    public boolean afficherResultatMaster(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
+    public void afficherResultatMaster(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
         Combinaison cpresent=new Combinaison();
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
         int bienplace=cbienplace.nombreChiffreBienPlace(resultat,nber);
         String joinedarray2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println();
-        System.out.println("C'est au tour de l'ordinateur: ");
-        System.out.println("*************** ORDINATEUR ANALYSE ET PROPOSE UN CODE **************");
-        System.out.println(" *********************** RESULTAT ********************************");
+        affichageOrdiPropose();
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ " bien placé(s):"+ bienplace + "  présent(s):"+present);
-        boolean continuer;
-        if ((Arrays.equals(tableau1,tableau2))&&(turn<tmax)) {
-            continuer = false;
-            System.out.println();
-            System.out.println("******************** FELICIATIONS A L'ORDINATEUR ****************************");
-            System.out.println("Bravo a l'Ordinateur qui  a trouvé le code secret en " +turn+" tour(s)!!");
-        } else if (turn==tmax){
-            System.out.println();
-            System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
-            System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
-            String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
-            System.out.println("La solution était: "+ joinedarray1);
-            continuer = false;
-        } else {
-            System.out.println("Il reste "+ (tmax-turn) + " tentative(s) à l'ordinateur pour trouver le code secret");
-            continuer=true;
-        }
-        return continuer;
+
     }
 
+
+    public void affichageOrdiPropose(){
+        System.out.println();
+        System.out.println("C'est au tour de l'ordinateur: ");
+        System.out.println("*************** L'ORDINATEUR ANALYSE ET PROPOSE UN CODE **************");
+        System.out.println(" *********************** RESULTAT ********************************");
+    }
+
+    public void affichageOrdiFelicitation(int turn){
+        System.out.println();
+        System.out.println("******************** L'ORDINATEUR A GAGNE  ****************************");
+        System.out.println("Bravo a l'Ordinateur qui a trouvé le code secret en " +turn+" tour(s)!!");
+    }
+
+    public void affichageOrdiDefaite(int [] tableau1){
+        System.out.println();
+        System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
+        System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
+        String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        System.out.println("La solution était: "+ joinedarray1);
+    }
 }
+

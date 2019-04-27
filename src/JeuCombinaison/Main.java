@@ -13,12 +13,10 @@ public class Main {
             int Menu=premierJoueur.choixdujeu();
            switch (Menu) {
                case 1:
-                   System.out.println("=============== JEU DU RECHERCHE PLUS OU MOINS  ================");
-                   jeu1.jeuRecherchePlus();
+                   jeu1.lancementJeuRecherchePlus();
                     break;
                 case 2:
-                    System.out.println("=============== JEU MASTERMIND  ================");
-                    jeu2.jeuMastermind();
+                    jeu2.lancementjeuMastermind();
                     break;
            }
         }

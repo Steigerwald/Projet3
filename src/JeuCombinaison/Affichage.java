@@ -15,34 +15,10 @@ public class Affichage {
      * @param nber number of code numbers
      * @return true or false in order to continue
      */
-
-    public boolean afficherResultat(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
-        String [] atrouver=new String [nber];
-        for (int i=0;i<nber;i++) {
-            atrouver[i] = "=";
-        }
+    public void afficherResultat(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
         String joinedResult = String.join("",resultat);
         String joinedarray2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
-        System.out.println(" *********************** RESULTAT DU JOUEUR ******************************************");
-        System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ joinedResult);
-        boolean continuer;
-        if ((Arrays.equals(resultat,atrouver))&&(turn<tmax)) {
-            continuer = false;
-            System.out.println();
-            System.out.println("******************** FELICIATIONS *************************************************");
-            System.out.println("Bravo! vous  avez trouvé le code secret en " +turn+" tour(s)!!");
-        } else if (turn==tmax){
-            System.out.println();
-            System.out.println("******************** PERDU ********************************************************");
-            System.out.println(" Malheureusement, vous avez perdu, le nombre de tentatives autorisées est dépassé !");
-            String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
-            System.out.println("La solution était: "+ joinedarray1);
-            continuer = false;
-        } else {
-            System.out.println("Il reste "+ (tmax-turn) + " tentative(s) pour trouver le code secret");
-            continuer=true;
-        }
-        return continuer;
+        resultatdujoueur(joinedarray2,joinedResult);
     }
 
     /**
@@ -55,26 +31,65 @@ public class Affichage {
      * @param nber number of code numbers
      * @return true or false in order to continue
      */
-    public boolean afficherResultatMaster(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
+    public void afficherResultatMaster(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
         Combinaison cpresent=new Combinaison();
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
         int bienplace=cbienplace.nombreChiffreBienPlace(resultat,nber);
         String joinedarray2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        System.out.println();
         System.out.println(" *********************** RESULTAT DU JOUEUR ********************************");
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+" bien placé(s):"+bienplace + "  présent(s):"+present);
+    }
+
+    /**
+     * Method for print the result of the player
+     * @param resultat1 purposed code secret numbers
+     * @param resultat2 result + or - or =
+     */
+    public static void resultatdujoueur(String resultat1,String resultat2){
+        System.out.println();
+        System.out.println(" *********************** RESULTAT DU JOUEUR ******************************************");
+        System.out.println("Proposition: "+ resultat1 +"   réponse: "+ resultat2);
+    }
+
+    /**
+     * Method for print the victory of the player
+     * @param turn number of turn that the player use in order to find all code secret numbers
+     */
+    public static void victoiredujoueur(int turn) {
+        System.out.println();
+        System.out.println("******************** FELICIATIONS *************************************************");
+        System.out.println("Bravo! vous  avez trouvé le code secret en " + turn + " tour(s)!!");
+    }
+
+    /**
+     * Method to print the defeat of the player
+     * @param tableau1 the code secret numbers that the player had to find
+     */
+    public static void defaitedujoueur(int[] tableau1){
+        System.out.println();
+        System.out.println("******************** PERDU ************************************************");
+        System.out.println(" Malheureusement, vous avez perdu, le nombre de tentatives autorisées est dépassé !");
+        String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        System.out.println("La solution était: "+ joinedarray1);
+    }
+
+    /**
+     * Method to check if the player has won or no
+     * @param tableau1 the code secret numbers that the has to find
+     * @param tableau2 the code secret numbers purposed by the player
+     * @param turn number of turn that the player takes
+     * @param tmax maxi number of allowed turns in order to find all code secret numbers
+     * @return true if the game need to continue or false in other case (victory or defeat)
+     */
+    public boolean verificationvictoire(int [] tableau1,int [] tableau2, int turn, int tmax){
         boolean continuer;
         if ((Arrays.equals(tableau1,tableau2))&&(turn<tmax)) {
             continuer = false;
-            System.out.println();
-            System.out.println("******************** FELICIATIONS ****************************************");
-            System.out.println("Bravo! vous  avez trouvé le code secret en " +turn+" tour(s)!!");
+            victoiredujoueur(turn);
         } else if (turn==tmax){
-            System.out.println();
-            System.out.println("******************** PERDU ************************************************");
-            System.out.println(" Malheureusement, vous avez perdu, le nombre de tentatives autorisées est dépassé !");
-            String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
-            System.out.println("La solution était: "+ joinedarray1);
+            defaitedujoueur(tableau1);
             continuer = false;
         } else {
             System.out.println("Il reste "+ (tmax-turn) + " tentative(s) pour trouver le code secret");
