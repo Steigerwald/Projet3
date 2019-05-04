@@ -2,6 +2,7 @@ package JeuCombinaison;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Masterminnd {
 
@@ -25,6 +26,8 @@ public class Masterminnd {
     Combinaison Result=new Combinaison();
     Affichage resultJoueur=new Affichage();
     Affichage resultOrdi=new Ordinateur();
+    HashMap<Integer, String> tableauCouleursDisponibles = new HashMap <Integer, String>();
+    Colors tableCouleurs = new Colors();
     boolean continuer;
 
 
@@ -53,13 +56,13 @@ public class Masterminnd {
      */
     public void modeChallengerMaster(){
         System.out.println("****** Mode Challenger **********");
-        tableau1 = ordiJoueur.saisirCodeSecret(nber,colo);
+        tableCouleurs.setTableCouleurs();
+        tableau1 = ordiJoueur.saisirCodeSecretMaster(nber,colo);
         continuer = true;
         while (continuer) {
-            String codeProposer = deuxiemeJoueur.proposer(nber,colo,menu);
+            String codeProposer = deuxiemeJoueur.proposerCodeMaster(nber,colo);
             tableau2 = Result.decouper(codeProposer, nber);
             resultat = Result.comparerMaster(tableau1, tableau2, nber);
-            System.out.println(resultat);
             turn = turn + 1;
             resultJoueur.afficherResultatMaster(tableau1, tableau2, resultat, turn, tmax, nber);
             continuer=resultJoueur.verificationvictoire(tableau1,tableau2,turn,tmax);
@@ -68,11 +71,11 @@ public class Masterminnd {
     }
 
     /**
-     * Method to launch the Défenseur mode
+     * Method to launch the Defender mode
      */
     public void modeDefenseurMaster(){
         System.out.println("****** Mode Défenseur **********");
-        String autreCode1 = premierJoueur.saisir(nber,colo,menu);
+        String autreCode1 = premierJoueur.saisirMaster(nber,colo);
         continuer = true;
         tableau2 = ordiJoueur.trouverCodeSecret(nber,colo);
         while (continuer) {
@@ -87,25 +90,25 @@ public class Masterminnd {
     }
 
     /**
-     * Method to launch the Duel mode
+     * Method to launch the Dual mode
      */
     public void modeDuelMaster(){
         System.out.println("****** Mode Duel **********");
-        String autreCode2 = premierJoueur.saisir(nber,colo,menu);
-        tableau1Ordi = ordiJoueur.saisirCodeSecret(nber,colo);
+        String autreCode2 = premierJoueur.saisirMaster(nber,colo);
+        tableau1Ordi = ordiJoueur.saisirCodeSecretMaster(nber,colo);
         tableau2Ordi = ordiJoueur.trouverCodeSecret(nber,colo);
         boolean continuer1 = true;
         boolean continuer2 = true;
         while (continuer1 && continuer2) {
-            String codeProposer = deuxiemeJoueur.proposer(nber,colo,menu);
+            String codeProposer = deuxiemeJoueur.proposerCodeMaster(nber,colo);
             tableau1Joueur = Result.decouper(autreCode2, nber);
             tableau2Joueur = Result.decouper(codeProposer, nber);
             resultat1 = Result.comparerMaster(tableau1Ordi, tableau2Joueur, nber);
             resultat2 = Result.comparerMaster(tableau1Joueur, tableau2Ordi, nber);
             turn = turn + 1;
             resultJoueur.afficherResultatMaster(tableau1Ordi, tableau2Joueur, resultat1, turn, tmax, nber);
-            resultOrdi.afficherResultatMaster(tableau1Joueur, tableau2Ordi, resultat2, turn, tmax, nber);
             continuer2=resultJoueur.verificationvictoire(tableau1Ordi,tableau2Joueur,turn,tmax);
+            resultOrdi.afficherResultatMaster(tableau1Joueur, tableau2Ordi, resultat2, turn, tmax, nber);
             continuer1=resultOrdi.verificationvictoire(tableau1Joueur, tableau2Ordi,turn,tmax);
             tableau2Ordi = ordiJoueur.AnalyseOrdi(tableau1Joueur, tableau2Ordi, nber);
             System.out.println();

@@ -6,15 +6,15 @@ import java.util.stream.Collectors;
 
 public class Affichage {
 
+    Colors tableCouleurs=new Colors();
     /**
-     * Method to print the result and see if the player has win for the game Rechercheplus
+     * Method to display the result and see if the player has win for the game Rechercheplus
      * @param tableau1 the secret code number
      * @param tableau2 the code numbers of the attacker
      * @param resultat the result of the comparison between the secret number and the attacker 's code numbers
      * @param turn number of current turn
      * @param tmax number of allowed turn in order to find the secret code numbers
      * @param nber number of code numbers
-     * @return true or false in order to continue
      */
     public void afficherResultat(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
         String joinedResult = String.join("",resultat);
@@ -23,28 +23,29 @@ public class Affichage {
     }
 
     /**
-     * Method to print the result and see if the player has win for the game Mastermind
+     * Method to display the result and see if the player has win for the game Mastermind
      * @param tableau1 the secret code number
      * @param tableau2 the code numbers of the attacker
      * @param resultat the result of the comparison between the secret number and the attacker 's code numbers
      * @param turn number of current turn
      * @param tmax number of allowed turn in order to find the secret code numbers
      * @param nber number of code numbers
-     * @return true or false in order to continue
      */
     public void afficherResultatMaster(int[] tableau1, int[] tableau2, ArrayList<String> resultat, int turn, int tmax, int nber){
         Combinaison cpresent=new Combinaison();
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
         int bienplace=cbienplace.nombreChiffreBienPlace(resultat,nber);
-        String joinedarray2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        tableCouleurs.setTableCouleurs();
+        String [] tabC=tableCouleurs.transformerNumerosEnCouleurs(tableau2,nber);
+        String joinedarray2 = String.join(",",tabC);
         System.out.println();
         System.out.println(" *********************** RESULTAT DU JOUEUR ********************************");
-        System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+" bien placé(s):"+bienplace + "  présent(s):"+present);
+        System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+" bien placé(s): "+bienplace + "  présent(s): "+present);
     }
 
     /**
-     * Method for print the result of the player
+     * Method to diplay the result of the player
      * @param resultat1 purposed code secret numbers
      * @param resultat2 result + or - or =
      */
@@ -55,7 +56,7 @@ public class Affichage {
     }
 
     /**
-     * Method for print the victory of the player
+     * Method to display the victory of the player
      * @param turn number of turn that the player use in order to find all code secret numbers
      */
     public static void victoiredujoueur(int turn) {
@@ -65,7 +66,7 @@ public class Affichage {
     }
 
     /**
-     * Method to print the defeat of the player
+     * Method to display the defeat of the player
      * @param tableau1 the code secret numbers that the player had to find
      */
     public static void defaitedujoueur(int[] tableau1){
@@ -98,4 +99,5 @@ public class Affichage {
         }
         return continuer;
     }
+
 }

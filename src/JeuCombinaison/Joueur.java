@@ -109,16 +109,18 @@ public class Joueur {
      */
     public static boolean verificationformatcodesecret(String rep, int x){
         boolean value=false;
+
         if ((rep.length()) > x) {
-            System.out.println(" vous avez choisi trop de chiffres, vous ne devez saisir que " + x + "chiffre(s)");
+            System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
             System.out.println("retapez un nouveau code à "+ x+" chiffre(s) svp !");
             value=true;
         } else if (rep.length() < x) {
-            System.out.println(" vous n'avez pas choisi assez de chiffre, vous devez saisir " + x + " chiffre(s)");
+            System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
             System.out.println("retapez un nouveau code à "+ x+" chiffre(s) svp !");
             value=true;
         } else{
             value=verificationsaisiemenu(rep);
+
         }
         return value;
     }

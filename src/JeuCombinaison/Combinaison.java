@@ -48,7 +48,6 @@ public class Combinaison {
      */
     public ArrayList <String> comparerMaster(int [] tab1,int [] tab2,int x) {
         ArrayList<String> result = new ArrayList<String>();
-        System.out.println(result);
         for (int counter = 0; counter < x; counter = counter + 1) {
             for (int j = 0; j < x; j++) {
                 if ((tab1[j] == tab2[counter]) && (j == counter)) {
@@ -94,6 +93,4 @@ public class Combinaison {
         }
         return occurence;
     }
-
-
 }

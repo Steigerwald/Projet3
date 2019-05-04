@@ -11,13 +11,32 @@ public class Ordinateur extends Affichage {
      * Method for the computer to choice the secret code number
      * @param x number of code numbers
      * @param y number of allowed numbers for example 4 allows 1 and 2 and 3 and 4
-     * @return the secret code number
+     * @return the secret code number as array of integer
      */
     public int [] saisirCodeSecret(int x,int y){
         System.out.println();
         System.out.println("C'est au tour de l'ordinateur: ");
         System.out.println(" *********************** L'ORDINATEUR CHOISIT UN CODE SECRET ************************************");
         System.out.println("L'ordinateur a fait son choix de " + x +" chiffres pour le code secret !!!");
+        int [] tab = new int [x];
+        for (int counter=0;counter<x;counter++){
+            int nbreH=1+(int)(Math.random()*y);
+            tab[counter]= nbreH;
+        }
+        return tab;
+    }
+
+    /**
+     * Method for the computer to choice the secret code number in the Mastermind game
+     * @param x number of cases
+     * @param y number of colors
+     * @return the secret code number as array of integer
+     */
+    public int [] saisirCodeSecretMaster(int x,int y){
+        System.out.println();
+        System.out.println("C'est au tour de l'ordinateur: ");
+        System.out.println(" *********************** L'ORDINATEUR CHOISIT SES COULEURS POUR LE CODE SECRET ************************************");
+        System.out.println("L'ordinateur a fait son choix de ses " + x +" couleurs pour son code secret !!!");
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
             int nbreH=1+(int)(Math.random()*y);
@@ -36,8 +55,6 @@ public class Ordinateur extends Affichage {
         System.out.println();
         System.out.println("C'est au tour de l'ordinateur: ");
         System.out.println(" *********************** L'ORDINATEUR COMMENCE A CHERCHER VOTRE CODE SECRET ******************************");
-        System.out.println();
-        System.out.println(" *********************** L'ORDINATEUR A FAIT SA PROPOSITION ******************************");
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
             int nbreH=1+(int)(Math.random()*y);
@@ -75,7 +92,6 @@ public class Ordinateur extends Affichage {
      * @param turn nomber of current turn
      * @param tmax nomber of allowed turn in order to find the secret code numbers
      * @param nber number of code numbers
-     * @return boolean false or true for continuer
      */
     public void afficherResultat(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
         String joinedResult = String.join("",resultat);
@@ -83,7 +99,6 @@ public class Ordinateur extends Affichage {
         affichageOrdiPropose();
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ joinedResult);
     }
-
 
     /**
      * Method to result for the Mastermind game
@@ -99,9 +114,11 @@ public class Ordinateur extends Affichage {
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
         int bienplace=cbienplace.nombreChiffreBienPlace(resultat,nber);
-        String joinedarray2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
+        tableCouleurs.setTableCouleurs();
+        String [] tabC=tableCouleurs.transformerNumerosEnCouleurs(tableau2,nber);
+        String joinedarray2 = String.join(",",tabC);
         affichageOrdiPropose();
-        System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ " bien placé(s):"+ bienplace + "  présent(s):"+present);
+        System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ " bien placé(s): "+ bienplace + "  présent(s): "+present);
     }
 
     /**
@@ -110,13 +127,13 @@ public class Ordinateur extends Affichage {
     public void affichageOrdiPropose(){
         System.out.println();
         System.out.println("C'est au tour de l'ordinateur: ");
-        System.out.println("*************** L'ORDINATEUR ANALYSE ET PROPOSE UN CODE **************");
+        System.out.println("*************** L'ORDINATEUR A CHERCHE ET PROPOSE UN CODE **************");
         System.out.println(" *********************** RESULTAT ********************************");
     }
 
     /**
      * Method to print the result when the computer win
-     * @param turn
+     * @param turn number of allowed turns in order to find the secret code numbers
      */
     public void victoireOrdinateur(int turn){
         System.out.println();

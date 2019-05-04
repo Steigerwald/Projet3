@@ -54,7 +54,7 @@ public class Rechercheplus {
         System.out.println(Arrays.toString(tableau1));
         continuer = true;
         while (continuer) {
-            String codeProposer = deuxiemeJoueur.proposer(nber,colo,menu);
+            String codeProposer = deuxiemeJoueur.proposer(nber);
             System.out.println(codeProposer);
             tableau2 = Result.decouper(codeProposer, nber);
             resultat = Result.comparer(tableau1, tableau2, nber);
@@ -70,7 +70,7 @@ public class Rechercheplus {
      */
     public void modeDefenseur(){
         System.out.println("****** Mode Défenseur **********");
-        String autreCode1 = premierJoueur.saisir(nber,colo,menu);
+        String autreCode1 = premierJoueur.saisir(nber);
         System.out.println(autreCode1);
         continuer = true;
         tableau2 = ordiJoueur.trouverCodeSecret(nber,colo);
@@ -90,13 +90,13 @@ public class Rechercheplus {
      */
     public void modeDuel(){
         System.out.println("****** Mode Duel **********");
-        String autreCode2 = premierJoueur.saisir(nber,colo,menu);
+        String autreCode2 = premierJoueur.saisir(nber);
         tableau1Ordi = ordiJoueur.saisirCodeSecret(nber,colo);
         tableau2Ordi = ordiJoueur.trouverCodeSecret(nber,colo);
         boolean continuer1 = true;
         boolean continuer2 = true;
         while (continuer1 && continuer2) {
-            String codeProposer = deuxiemeJoueur.proposer(nber,colo,menu);
+            String codeProposer = deuxiemeJoueur.proposer(nber);
             tableau1Joueur = Result.decouper(autreCode2, nber);
             tableau2Joueur = Result.decouper(codeProposer, nber);
             resultat1 = Result.comparer(tableau1Ordi, tableau2Joueur, nber);
@@ -104,9 +104,9 @@ public class Rechercheplus {
             turn = turn + 1;
             resultJoueur.afficherResultat(tableau1Ordi, tableau2Joueur, resultat1, turn, tmax, nber);
             System.out.println();
+            continuer1=resultOrdi.verificationvictoire(tableau1Joueur,tableau2Ordi,turn,tmax);
             resultOrdi.afficherResultat(tableau1Joueur, tableau2Ordi, resultat2, turn, tmax, nber);
             System.out.println();
-            continuer1=resultOrdi.verificationvictoire(tableau1Joueur,tableau2Ordi,turn,tmax);
             continuer2=resultJoueur.verificationvictoire(tableau1Ordi,tableau2Joueur,turn,tmax);
             tableau2Ordi = ordiJoueur.AnalyseOrdi(tableau1Joueur, tableau2Ordi, nber);
             System.out.println();
