@@ -81,7 +81,8 @@ public class Joueur {
                 System.out.println("2 MASTERMIND");
                 rep1=(sc.nextLine());
                 problem = verificationsaisiemenu(rep1);
-            } while (problem);
+            }
+            while (problem);
             choice = Integer.parseInt(Character.toString(rep1.charAt(0)));
             switch (choice) {
                 case 1:
@@ -109,11 +110,11 @@ public class Joueur {
     public static boolean verificationformatcodesecret(String rep, int x){
         boolean value=false;
         if ((rep.length()) > x) {
-            System.out.println(" vous avez choisi trop de chiffres, vous ne devez saisir que " + x + " chiffre(s) entre 1 et 9!!!");
+            System.out.println(" vous avez choisi trop de chiffres, vous ne devez saisir que " + x + "chiffre(s)");
             System.out.println("retapez un nouveau code à "+ x+" chiffre(s) svp !");
             value=true;
         } else if (rep.length() < x) {
-            System.out.println(" vous n'avez pas choisi assez de chiffre, vous devez saisir " + x + " chiffre(s) entre 1 et 9!!!");
+            System.out.println(" vous n'avez pas choisi assez de chiffre, vous devez saisir " + x + " chiffre(s)");
             System.out.println("retapez un nouveau code à "+ x+" chiffre(s) svp !");
             value=true;
         } else{

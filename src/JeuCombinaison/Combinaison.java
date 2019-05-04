@@ -1,6 +1,8 @@
 package JeuCombinaison;
 
 
+import java.util.ArrayList;
+
 public class Combinaison {
 
     /**
@@ -44,16 +46,17 @@ public class Combinaison {
      * @param x number of code numbers
      * @return the result of comparison "bien placé" or "présent" or ""
      */
-    public String [] comparerMaster(int [] tab1,int [] tab2,int x) {
-        String[] result = new String[x];
+    public ArrayList <String> comparerMaster(int [] tab1,int [] tab2,int x) {
+        ArrayList<String> result = new ArrayList<String>();
+        System.out.println(result);
         for (int counter = 0; counter < x; counter = counter + 1) {
             for (int j = 0; j < x; j++) {
                 if ((tab1[j] == tab2[counter]) && (j == counter)) {
-                    result[counter] = "bien placé";
+                    result.add("bien placé");
                 } else if ((tab1[j] == tab2[counter]) && (j != counter)) {
-                    result[counter] = "présent";
+                    result.add("présent");
                 } else {
-                    result[counter] = "";
+                    result.add("");
                 }
             }
         }
@@ -65,10 +68,11 @@ public class Combinaison {
      * @param x number of code numbers
      * @return number of time that you find "présent" in result
      */
-    public int nombreChiffrePresent(String[] resultat, int x){
+    public int nombreChiffrePresent(ArrayList<String> resultat, int x){
         int occurence=0;
-        for (int i=0;i<x;i++){
-            if (resultat[i].equals("présent")){
+        int j=(int)Math.pow(x,2.0);
+        for (int i=0;i<j;i++){
+            if (resultat.get(i).equals("présent")){
                 occurence = occurence +1;
             }
         }
@@ -80,13 +84,16 @@ public class Combinaison {
      * @param x number of code numbers
      * @return number of time that you find "bien placé" in result
      */
-    public int nombreChiffreBienPlace(String[] resultat, int x){
+    public int nombreChiffreBienPlace(ArrayList<String> resultat, int x){
         int occurence=0;
-        for (int i=0;i<x;i++){
-            if (resultat[i].equals("bien placé")){
+        int j=(int)Math.pow(x,2.0);
+        for (int i=0;i<j;i++){
+            if (resultat.get(i).equals("bien placé")){
                 occurence = occurence +1;
             }
         }
         return occurence;
     }
+
+
 }

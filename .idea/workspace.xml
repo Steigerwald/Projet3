@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3c6dde4-8e42-4354-8b9c-aaa2b4fe582f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/JeuCombinaison/Colors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Affichage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Affichage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Attaquant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Attaquant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Combinaison.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Combinaison.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Defenseur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Defenseur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Joueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Masterminnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Masterminnd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Ordinateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Ordinateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Rechercheplus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuRechercheCode/JeuCombinaison/Rechercheplus.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JeuCombinaison/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JeuCombinaison/Affichage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JeuCombinaison/Attaquant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JeuCombinaison/Attaquant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JeuCombinaison/Defenseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JeuCombinaison/Defenseur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JeuCombinaison/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JeuCombinaison/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JeuCombinaison/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JeuCombinaison/Main.java" afterDir="false" />
@@ -29,15 +35,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Rechercheplus.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
             </state>
@@ -45,31 +42,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Affichage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Joueur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="1700">
+              <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -77,8 +53,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Defenseur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="340">
+              <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-560">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -86,8 +71,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Ordinateur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="676">
+              <caret line="128" column="45" lean-forward="true" selection-start-line="128" selection-start-column="45" selection-end-line="128" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Affichage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1394">
+              <caret line="82" column="55" lean-forward="true" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,8 +95,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Masterminnd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="99" column="107" selection-start-line="99" selection-start-column="107" selection-end-line="99" selection-end-column="107" />
+            <state relative-caret-position="105">
+              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Colors.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#310#311#0" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
+                <element signature="e#372#373#0" expanded="true" />
+                <element signature="e#399#400#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Attaquant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -118,6 +133,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -128,15 +144,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/testfichierconf.fxml" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/Configurationtest" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Joueur.java" />
-        <option value="$PROJECT_DIR$/src/JeuCombinaison/Main.java" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Attaquant.java" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Defenseur.java" />
-        <option value="$PROJECT_DIR$/src/JeuCombinaison/Rechercheplus.java" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/Main.java" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Affichage.java" />
-        <option value="$PROJECT_DIR$/src/JeuCombinaison/Masterminnd.java" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Ordinateur.java" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/Rechercheplus.java" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/Masterminnd.java" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/Couleurs.java" />
+        <option value="$PROJECT_DIR$/src/JeuCombinaison/Colors.java" />
       </list>
     </option>
   </component>
@@ -146,8 +166,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1378" />
     <option name="height" value="728" />
   </component>
@@ -157,19 +178,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="JeuRechercheCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="JeuRechercheCode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JeuRechercheCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JeuRechercheCode" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JeuRechercheCode" type="b2602c69:ProjectViewProjectNode" />
@@ -190,11 +204,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556379350374" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JeuxLogique/src/jeudessai" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556746658563" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/Kensei/Kensei Imperial Assault Tools Suite/Newtonsoft.Json.dll" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -251,9 +267,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="728" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22078907" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23298033" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -262,12 +278,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48861912" weight="0.3338926" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48861912" weight="0.3251634" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49848256" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4939302" weight="0.32885906" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4939302" weight="0.3305369" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51138085" side_tool="true" weight="0.3338926" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32885906" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49241275" weight="0.32885906" />
@@ -314,62 +330,77 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Masterminnd.java">
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/testfichierconf.fxml" />
+    <entry file="file://C:/Program Files (x86)/Kensei/Kensei Imperial Assault Tools Suite/ImpAss.CardEditor.exe.config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Kensei/Kensei Imperial Assault Tools Suite/ImpAss.CardEditor.exe">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Kensei/Kensei Imperial Assault Tools Suite/Newtonsoft.Json.dll">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Rechercheplus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="99" column="107" selection-start-line="99" selection-start-column="107" selection-end-line="99" selection-end-column="107" />
+        <state relative-caret-position="425">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Ordinateur.java">
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Configurationtest">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Attaquant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Defenseur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="187">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Affichage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="1394">
+          <caret line="82" column="55" lean-forward="true" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java">
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Attaquant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="425">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Rechercheplus.java">
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-560">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Defenseur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
@@ -378,8 +409,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Joueur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="1700">
+          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Ordinateur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="128" column="45" lean-forward="true" selection-start-line="128" selection-start-column="45" selection-end-line="128" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Couleurs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" selection-start-line="3" selection-start-column="8" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Masterminnd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JeuCombinaison/Colors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

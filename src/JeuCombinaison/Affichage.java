@@ -1,5 +1,6 @@
 package JeuCombinaison;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -31,7 +32,7 @@ public class Affichage {
      * @param nber number of code numbers
      * @return true or false in order to continue
      */
-    public void afficherResultatMaster(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
+    public void afficherResultatMaster(int[] tableau1, int[] tableau2, ArrayList<String> resultat, int turn, int tmax, int nber){
         Combinaison cpresent=new Combinaison();
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
@@ -77,7 +78,7 @@ public class Affichage {
 
     /**
      * Method to check if the player has won or no
-     * @param tableau1 the code secret numbers that the has to find
+     * @param tableau1 the code secret numbers that the player has to find
      * @param tableau2 the code secret numbers purposed by the player
      * @param turn number of turn that the player takes
      * @param tmax maxi number of allowed turns in order to find all code secret numbers

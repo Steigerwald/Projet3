@@ -1,6 +1,7 @@
 package JeuCombinaison;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -9,16 +10,17 @@ public class Ordinateur extends Affichage {
     /**
      * Method for the computer to choice the secret code number
      * @param x number of code numbers
+     * @param y number of allowed numbers for example 4 allows 1 and 2 and 3 and 4
      * @return the secret code number
      */
-    public int [] saisirCodeSecret(int x){
+    public int [] saisirCodeSecret(int x,int y){
         System.out.println();
         System.out.println("C'est au tour de l'ordinateur: ");
         System.out.println(" *********************** L'ORDINATEUR CHOISIT UN CODE SECRET ************************************");
         System.out.println("L'ordinateur a fait son choix de " + x +" chiffres pour le code secret !!!");
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
-            int nbreH=1+(int)(Math.random()*8);
+            int nbreH=1+(int)(Math.random()*y);
             tab[counter]= nbreH;
         }
         return tab;
@@ -27,9 +29,10 @@ public class Ordinateur extends Affichage {
     /**
      * Method for the computer to find the secret code number
      * @param x number of code numbers
+     * @param y number of allowed numbers for example 4 allows 1 and 2 and 3 and 4
      * @return the purposed code numbers
      */
-    public int [] trouverCodeSecret(int x){
+    public int [] trouverCodeSecret(int x,int y){
         System.out.println();
         System.out.println("C'est au tour de l'ordinateur: ");
         System.out.println(" *********************** L'ORDINATEUR COMMENCE A CHERCHER VOTRE CODE SECRET ******************************");
@@ -37,7 +40,7 @@ public class Ordinateur extends Affichage {
         System.out.println(" *********************** L'ORDINATEUR A FAIT SA PROPOSITION ******************************");
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
-            int nbreH=1+(int)(Math.random()*8);
+            int nbreH=1+(int)(Math.random()*y);
             tab[counter]= nbreH;
         }
         return tab;
@@ -81,7 +84,17 @@ public class Ordinateur extends Affichage {
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ joinedResult);
     }
 
-    public void afficherResultatMaster(int[] tableau1,int[] tableau2,String [] resultat,int turn, int tmax,int nber){
+
+    /**
+     * Method to result for the Mastermind game
+     * @param tableau1 the secret code number
+     * @param tableau2 the code numbers of the attacker
+     * @param resultat the result of the comparison between the secret number and the attacker 's code numbers
+     * @param turn number of current turn
+     * @param tmax number of allowed turn in order to find the secret code numbers
+     * @param nber number of code numbers
+     */
+    public void afficherResultatMaster(int[] tableau1, int[] tableau2, ArrayList<String> resultat, int turn, int tmax, int nber){
         Combinaison cpresent=new Combinaison();
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
@@ -89,10 +102,11 @@ public class Ordinateur extends Affichage {
         String joinedarray2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
         affichageOrdiPropose();
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ " bien placé(s):"+ bienplace + "  présent(s):"+present);
-
     }
 
-
+    /**
+     * Method to print that the computer will purpose a neuw code
+     */
     public void affichageOrdiPropose(){
         System.out.println();
         System.out.println("C'est au tour de l'ordinateur: ");
@@ -100,18 +114,50 @@ public class Ordinateur extends Affichage {
         System.out.println(" *********************** RESULTAT ********************************");
     }
 
-    public void affichageOrdiFelicitation(int turn){
+    /**
+     * Method to print the result when the computer win
+     * @param turn
+     */
+    public void victoireOrdinateur(int turn){
         System.out.println();
         System.out.println("******************** L'ORDINATEUR A GAGNE  ****************************");
         System.out.println("Bravo a l'Ordinateur qui a trouvé le code secret en " +turn+" tour(s)!!");
     }
 
-    public void affichageOrdiDefaite(int [] tableau1){
+    /**
+     * Methode to print the result when the computer loose
+     * @param tableau1 the secret code number
+     */
+    public void defaiteOrdinateur(int [] tableau1){
         System.out.println();
         System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
         System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
         String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("La solution était: "+ joinedarray1);
     }
+
+    /**
+     * Method to check if the player has won or no
+     * @param tableau1 the code secret numbers that the computeur has to find
+     * @param tableau2 the code secret numbers purposed by the computer
+     * @param turn number of turn that the player takes
+     * @param tmax maxi number of allowed turns in order to find all code secret numbers
+     * @return true if the game need to continue or false in other case (victory or defeat)
+     */
+    public boolean verificationvictoire(int [] tableau1,int [] tableau2, int turn, int tmax){
+        boolean continuer;
+        if ((Arrays.equals(tableau1,tableau2))&&(turn<tmax)) {
+            continuer = false;
+            victoireOrdinateur(turn);
+        } else if (turn==tmax){
+            defaiteOrdinateur(tableau1);
+            continuer = false;
+        } else {
+            System.out.println("Il reste "+ (tmax-turn) + " tentative(s) pour trouver le code secret");
+            continuer=true;
+        }
+        return continuer;
+    }
 }
+
 

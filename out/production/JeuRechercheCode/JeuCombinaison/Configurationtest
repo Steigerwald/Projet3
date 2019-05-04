@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <jeu type="Rechercheplus">
+        <NombreCases>4</NombreCases>
+        <NombreEssais>12</NombreEssais>
+    </jeu>
+    <jeu type="Mastermind">
+        <NombreCases>4</NombreCases>
+        <NombreEssais>12</NombreEssais>
+        <NombreCouleur>9</NombreCouleur>
+    </jeu>
+</configuration>

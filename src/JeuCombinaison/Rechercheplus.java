@@ -1,8 +1,10 @@
 package JeuCombinaison;
 
-public class Rechercheplus {
+import java.util.Arrays;
 
+public class Rechercheplus {
     int nber=4;
+    int colo=8;
     int turn=0;
     final int tmax=12;
     Defenseur premierJoueur = new Defenseur();
@@ -14,6 +16,7 @@ public class Rechercheplus {
     int [] tableau2Ordi;
     int [] tableau1Joueur;
     int [] tableau2Joueur;
+    int menu;
     String[] resultat1;
     String[] resultat2;
     String [] resultat;
@@ -47,10 +50,12 @@ public class Rechercheplus {
      */
     public void modeChallenger(){
         System.out.println("****** Mode Challenger **********");
-        tableau1 = ordiJoueur.saisirCodeSecret(nber);
+        tableau1 = ordiJoueur.saisirCodeSecret(nber,colo);
+        System.out.println(Arrays.toString(tableau1));
         continuer = true;
         while (continuer) {
-            String codeProposer = deuxiemeJoueur.proposer(nber);
+            String codeProposer = deuxiemeJoueur.proposer(nber,colo,menu);
+            System.out.println(codeProposer);
             tableau2 = Result.decouper(codeProposer, nber);
             resultat = Result.comparer(tableau1, tableau2, nber);
             turn = turn + 1;
@@ -65,9 +70,10 @@ public class Rechercheplus {
      */
     public void modeDefenseur(){
         System.out.println("****** Mode Défenseur **********");
-        String autreCode1 = premierJoueur.saisir(nber);
+        String autreCode1 = premierJoueur.saisir(nber,colo,menu);
+        System.out.println(autreCode1);
         continuer = true;
-        tableau2 = ordiJoueur.trouverCodeSecret(nber);
+        tableau2 = ordiJoueur.trouverCodeSecret(nber,colo);
         while (continuer) {
             tableau1 = Result.decouper(autreCode1, nber);
             resultat = Result.comparer(tableau1, tableau2, nber);
@@ -84,13 +90,13 @@ public class Rechercheplus {
      */
     public void modeDuel(){
         System.out.println("****** Mode Duel **********");
-        String autreCode2 = premierJoueur.saisir(nber);
-        tableau1Ordi = ordiJoueur.saisirCodeSecret(nber);
-        tableau2Ordi = ordiJoueur.trouverCodeSecret(nber);
+        String autreCode2 = premierJoueur.saisir(nber,colo,menu);
+        tableau1Ordi = ordiJoueur.saisirCodeSecret(nber,colo);
+        tableau2Ordi = ordiJoueur.trouverCodeSecret(nber,colo);
         boolean continuer1 = true;
         boolean continuer2 = true;
         while (continuer1 && continuer2) {
-            String codeProposer = deuxiemeJoueur.proposer(nber);
+            String codeProposer = deuxiemeJoueur.proposer(nber,colo,menu);
             tableau1Joueur = Result.decouper(autreCode2, nber);
             tableau2Joueur = Result.decouper(codeProposer, nber);
             resultat1 = Result.comparer(tableau1Ordi, tableau2Joueur, nber);
