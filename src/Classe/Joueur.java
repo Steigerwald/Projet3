@@ -1,4 +1,4 @@
-package JeuCombinaison;
+package Classe;
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class Joueur {
                System.out.println("2 Mode Défenseur");
                System.out.println("3 Mode Duel");
                rep = (sc.nextLine());
-               problem = verificationsaisiemenu(rep);
+               problem = verificationSaisieChiffre(rep);
            } while (problem);
            mode=Integer.parseInt(Character.toString(rep.charAt(0)));
            switch (mode) {
@@ -80,7 +80,7 @@ public class Joueur {
                 System.out.println("1 RECHERCHE PLUS OU MOINS ");
                 System.out.println("2 MASTERMIND");
                 rep1=(sc.nextLine());
-                problem = verificationsaisiemenu(rep1);
+                problem = verificationSaisieChiffre(rep1);
             }
             while (problem);
             choice = Integer.parseInt(Character.toString(rep1.charAt(0)));
@@ -112,25 +112,48 @@ public class Joueur {
 
         if ((rep.length()) > x) {
             System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à "+ x+" chiffre(s) svp !");
+            System.out.println("retapez un nouveau code à "+ x +" chiffre(s) svp !");
             value=true;
         } else if (rep.length() < x) {
             System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à "+ x+" chiffre(s) svp !");
+            System.out.println("retapez un nouveau code à "+ x + " chiffre(s) svp !");
             value=true;
         } else{
-            value=verificationsaisiemenu(rep);
-
+            value=verificationSaisieChiffre(rep);
         }
         return value;
     }
 
     /**
-     * Method to check the format of the purposed code numbers
+     * Method to check the format of code secret numbers
+     * @param rep the code secret numbers
+     * @param x number of code numbers
+     * @return true if there is a problem or false if it is ok
+     */
+    public static boolean verificationformatcodesecretMaster(String rep, int x){
+        boolean value=false;
+
+        if ((rep.length()) > x) {
+            System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
+            System.out.println("retapez un nouveau code à "+ x +" couleur(s) svp !");
+            value=true;
+        } else if (rep.length() < x) {
+            System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
+            System.out.println("retapez "+ x + " couleurs(s) svp !");
+            value=true;
+        } else{
+            value=verificationSaisieLettre(rep,x);
+        }
+        return value;
+    }
+
+
+    /**
+     * Method to check the format of the purposed code numbers : is it a number?
      * @param rep1 the purposed code numbers
      * @return true if there is a problem or false if it is ok
      */
-    public static boolean verificationsaisiemenu(String rep1){
+    public static boolean verificationSaisieChiffre(String rep1){
         boolean problem=false;
         try {
             Integer.parseInt(rep1);
@@ -141,6 +164,29 @@ public class Joueur {
         }
         return problem;
     }
+    /**
+     * Method to check the format of the purposed code colors, is it a letter?
+     * @param rep1 the purposed code colors
+     * @return true if there is a problem or false if it is ok
+     */
+    public static boolean verificationSaisieLettre(String rep1, int x){
+        boolean problem=false;
+        int i=0;
+        while (i<x && !problem){
+                problem = Character.isDigit(rep1.charAt(i));
+                if (problem) {
+                    System.out.println("Un des charactères du code saisi est un chiffre ou une lettre qui ne correspond pas avec les couleurs disponibles !!");
+                    System.out.println("vous devez ressaisir ce code");
+                    problem=true;
+                } else {
+                    problem = false;
+                }
+                i++;
+        }
+        return problem;
+    }
+
+
 
 
 }

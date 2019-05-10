@@ -1,10 +1,10 @@
-package JeuCombinaison;
+package Classe;
 
-import java.util.HashMap;
 
 public class Attaquant extends Joueur {
     Joueur joueur = new Joueur();
-    Colors tableCouleurs = new Colors();
+    Affichage tableCouleurs = new Affichage();
+    Combinaison reponse= new Combinaison();
     /**
      * Method for the attacker in order to suggest code numbers
      * @param x number of numbers
@@ -13,8 +13,7 @@ public class Attaquant extends Joueur {
     public String proposer(int x){
         boolean problem=true;
         System.out.println();
-        System.out.println(" *********************** JOUEUR ATTAQUANT **********************************");
-        System.out.println(" Le joueur attaquant doit trouver le code secret !!!");
+        System.out.println(" *********************** JOUEUR ATTAQUANT QUI DOIT TROUVER LE CODE SECRET **********************************");
         System.out.println("Vous devez maintenant taper un nombre de " + x + " chiffres pour trouver le code secret");
         do {
             rep2 = sc.nextLine();
@@ -29,20 +28,19 @@ public class Attaquant extends Joueur {
      * @param y number of colors
      * @return the answer of the attacker, the purposed code colors
      */
-    public String proposerCodeMaster(int x,int y){
+    public int [] proposerCodeMaster(int x,int y){
         boolean problem=true;
+        int [] tab=new int[x];
         System.out.println();
-        System.out.println(" *********************** JOUEUR ATTAQUANT **********************************");
-        System.out.println(" Le joueur attaquant doit trouver les couleurs du code secret !!!");
-        System.out.println("Et vous devez maintenant taper un nombre de " + x + " couleurs pour trouver le code secret");
-        System.out.println("Les " + x + " couleurs doivent chacune être comprise entre 1 et "+ (y+1));
-        tableCouleurs.setTableCouleurs();
+        System.out.println(" *********************** JOUEUR ATTAQUANT QUI DOIT TROUVER LE CODE SECRET **********************************");
+        System.out.println("Vous devez maintenant sélectionner un nombre de " + x + " couleurs parmi les "+y+" couleurs disponibles ci-dessous");
         tableCouleurs.afficherCouleursDisponibles(y);
         do {
             rep2 = sc.nextLine();
-            problem=verificationformatcodesecret(rep2,x);
+            tab=reponse.transformerPremieresLettresEnNumero(rep2,x);
+            problem=verificationformatcodesecretMaster(rep2,x);
         } while (problem);
-        return rep2;
+        return tab;
     }
 
 }

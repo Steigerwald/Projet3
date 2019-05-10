@@ -1,12 +1,12 @@
-package JeuCombinaison;
-
+package Classe;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class Ordinateur extends Affichage {
-
+Combinaison Result=new Combinaison();
+int nber;
     /**
      * Method for the computer to choice the secret code number
      * @param x number of code numbers
@@ -114,8 +114,7 @@ public class Ordinateur extends Affichage {
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
         int bienplace=cbienplace.nombreChiffreBienPlace(resultat,nber);
-        tableCouleurs.setTableCouleurs();
-        String [] tabC=tableCouleurs.transformerNumerosEnCouleurs(tableau2,nber);
+        String [] tabC=Result.transformerNumerosEnCouleurs(tableau2,nber);
         String joinedarray2 = String.join(",",tabC);
         affichageOrdiPropose();
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ " bien placé(s): "+ bienplace + "  présent(s): "+present);
@@ -149,6 +148,19 @@ public class Ordinateur extends Affichage {
         System.out.println();
         System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
         System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
+        String [] tabC=Result.transformerNumerosEnCouleurs(tableau1,nber);
+        String joinedarray1 = String.join(",",tabC);
+        System.out.println("La solution était: "+ joinedarray1);
+    }
+
+    /**
+     * Methode to print the result when the computer loose for the Mastermind game
+     * @param tableau1 the secret code number
+     */
+    public void defaiteOrdinateurMaster(int [] tableau1){
+        System.out.println();
+        System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
+        System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
         String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("La solution était: "+ joinedarray1);
     }
@@ -175,6 +187,33 @@ public class Ordinateur extends Affichage {
         }
         return continuer;
     }
+    /**
+     * Method to check if the player has won or no for the Mastermind game
+     * @param tableau1 the code secret numbers that the computeur has to find
+     * @param tableau2 the code secret numbers purposed by the computer
+     * @param turn number of turn that the player takes
+     * @param tmax maxi number of allowed turns in order to find all code secret numbers
+     * @return true if the game need to continue or false in other case (victory or defeat)
+     */
+    public boolean verificationVictoireMaster(int [] tableau1,int [] tableau2, int turn, int tmax){
+        boolean continuer;
+        if ((Arrays.equals(tableau1,tableau2))&&(turn<tmax)) {
+            continuer = false;
+            victoireOrdinateur(turn);
+        } else if (turn==tmax){
+            defaiteOrdinateurMaster(tableau1);
+            continuer = false;
+        } else {
+            System.out.println("Il reste "+ (tmax-turn) + " tentative(s) pour trouver le code secret");
+            continuer=true;
+        }
+        return continuer;
+    }
+
+
+
+
+
 }
 
 

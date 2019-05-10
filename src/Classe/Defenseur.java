@@ -1,9 +1,10 @@
-package JeuCombinaison;
+package Classe;
 
 public class Defenseur extends Joueur {
     Joueur joueur = new Joueur();
-    Colors tableCouleurs = new Colors();
-    Combinaison Result=new Combinaison();
+    Affichage tableCouleurs = new Affichage();
+    Combinaison result=new Combinaison();
+    Combinaison reponse=new Combinaison();
     int [] tabRep;
     /**
      * Method for the defender in order to choice the secret code numbers
@@ -31,24 +32,23 @@ public class Defenseur extends Joueur {
      * @param y number of allowed colors for example 4 allows 1 and 2 and 3 and 4
      * @return the secret code numbers as string
      */
-    public String saisirMaster(int x,int y){
+    public int [] saisirMaster(int x,int y){
         boolean problem=true;
+        int [] tab=new int[x];
         System.out.println();
         System.out.println(" *********************** JOUEUR DEFENSEUR *********************************");
         System.out.println("Vous êtes le défenseur et vous devez choisir votre code secret en toute discrétion !!!");
-        System.out.println("Vous devez taper un nombre de "+ x +" couleurs pour votre code secret");
-        System.out.println("Les " + x + " couleurs doivent chacune être comprise entre 1 et "+ (y+1));
-        tableCouleurs.setTableCouleurs();
+        System.out.println("Vous devez sélectionner un nombre de "+ x +" couleurs parmis les couleurs proposées ci-dessous");
         tableCouleurs.afficherCouleursDisponibles(y);
         do {
             rep1=sc.nextLine();
-            problem=verificationformatcodesecret(rep1,x);
+            tab=reponse.transformerPremieresLettresEnNumero(rep1,x);
+            problem=verificationformatcodesecretMaster(rep1,x);
         } while (problem);
-        tabRep = Result.decouper(rep1,x);
-        String codeSecret = String.join(",",tableCouleurs.transformerNumerosEnCouleurs(tabRep,x));
+        String codeSecret = String.join(",",result.transformerNumerosEnCouleurs(tab,x));
         System.out.println("Vous avez choisi la combinaison suivante: "+ codeSecret);
         System.out.println();
-        return rep1;
+        return tab;
     }
 
 }

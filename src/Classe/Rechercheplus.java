@@ -1,4 +1,4 @@
-package JeuCombinaison;
+package Classe;
 
 import java.util.Arrays;
 
@@ -60,7 +60,7 @@ public class Rechercheplus {
             resultat = Result.comparer(tableau1, tableau2, nber);
             turn = turn + 1;
             resultJoueur.afficherResultat(tableau1, tableau2, resultat, turn, tmax, nber);
-            continuer =resultJoueur.verificationvictoire(tableau1,tableau2,turn,tmax);
+            continuer =resultJoueur.verificationVictoire(tableau1,tableau2,turn,tmax);
             System.out.println();
         }
     }
@@ -79,7 +79,7 @@ public class Rechercheplus {
             resultat = Result.comparer(tableau1, tableau2, nber);
             turn = turn + 1;
             resultOrdi.afficherResultat(tableau1, tableau2, resultat, turn, tmax, nber);
-            continuer =resultOrdi.verificationvictoire(tableau1,tableau2,turn,tmax);
+            continuer =resultOrdi.verificationVictoire(tableau1,tableau2,turn,tmax);
             tableau2 = ordiJoueur.AnalyseOrdi(tableau1, tableau2, nber);
             System.out.println();
         }
@@ -104,14 +104,12 @@ public class Rechercheplus {
             turn = turn + 1;
             resultJoueur.afficherResultat(tableau1Ordi, tableau2Joueur, resultat1, turn, tmax, nber);
             System.out.println();
-            continuer1=resultOrdi.verificationvictoire(tableau1Joueur,tableau2Ordi,turn,tmax);
+            continuer1=resultOrdi.verificationVictoire(tableau1Joueur,tableau2Ordi,turn,tmax);
             resultOrdi.afficherResultat(tableau1Joueur, tableau2Ordi, resultat2, turn, tmax, nber);
             System.out.println();
-            continuer2=resultJoueur.verificationvictoire(tableau1Ordi,tableau2Joueur,turn,tmax);
+            continuer2=resultJoueur.verificationVictoire(tableau1Ordi,tableau2Joueur,turn,tmax);
             tableau2Ordi = ordiJoueur.AnalyseOrdi(tableau1Joueur, tableau2Ordi, nber);
             System.out.println();
         }
     }
-
-
 }
