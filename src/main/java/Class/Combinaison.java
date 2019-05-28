@@ -1,10 +1,11 @@
-package Classe;
+package main.java.Class;
 
-import Enum.Colors;
+import main.java.Enum.Colors;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Combinaison {
-boolean problem = false;
+
     /**
      * Method to separate each number and to record it in an array
      * @param rep String answer which is converted in integer
@@ -102,7 +103,7 @@ boolean problem = false;
      */
     public String [] transformerNumerosEnCouleurs(int[] tab1, int x) {
         String[] tab2=new String[x];
-        for (int i = 0; i < x; i++) {
+        for (int i = 0; i < x && i< tab1.length; i++) {
             switch (tab1[i]){
                     case 1:
                         tab2[i]= Colors.Rouge.toString();
@@ -145,8 +146,7 @@ boolean problem = false;
         int[] tab=new int[x];
         rep = rep.toUpperCase();
         int i=0;
-        while ((i<x)&& !problem){
-            problem=Character.isDigit(rep.charAt(i));
+        while ((i<rep.length())&& i<x){
             switch (rep.charAt(i)){
                 case 'R':
                     tab[i]= Colors.Rouge.toNumero();
@@ -176,13 +176,9 @@ boolean problem = false;
                     tab[i]= Colors.Marron.toNumero();
                     break;
                 default:
-                    problem = true;
+                    tab[i]= 0;
             }
             i++;
-            if (problem){
-                System.out.println("Un des charactères du code saisi est un chiffre ou une lettre qui ne correspond pas avec les couleurs disponibles !!");
-                System.out.println("vous devez ressaisir ce code");
-            }
         }
         return tab;
     }

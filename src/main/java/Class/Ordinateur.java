@@ -1,12 +1,28 @@
-package Classe;
+package main.java.Class;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class Ordinateur extends Affichage {
-Combinaison Result=new Combinaison();
-int nber;
+
+    public final Logger logger= LogManager.getLogger(Rechercheplus.class);
+    private Combinaison Result=new Combinaison();
+    private int nber;
+
+    //Getters
+    @Override
+    public Combinaison getResult() {
+        return Result;
+    }
+    @Override
+    public int getNber() {
+        return nber;
+    }
+
     /**
      * Method for the computer to choice the secret code number
      * @param x number of code numbers
@@ -15,14 +31,14 @@ int nber;
      */
     public int [] saisirCodeSecret(int x,int y){
         System.out.println();
-        System.out.println("C'est au tour de l'ordinateur: ");
-        System.out.println(" *********************** L'ORDINATEUR CHOISIT UN CODE SECRET ************************************");
-        System.out.println("L'ordinateur a fait son choix de " + x +" chiffres pour le code secret !!!");
+        System.out.println(" ******************* L'ORDINATEUR CHOISIT UN CODE SECRET **********************************");
+        System.out.println("L'ordinateur a fait son choix de " + x +" chiffres pour le code secret.");
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
             int nbreH=1+(int)(Math.random()*y);
             tab[counter]= nbreH;
         }
+        logger.debug("le code secret de l'ordinateur est: "+ Arrays.toString(tab));
         return tab;
     }
 
@@ -34,14 +50,14 @@ int nber;
      */
     public int [] saisirCodeSecretMaster(int x,int y){
         System.out.println();
-        System.out.println("C'est au tour de l'ordinateur: ");
-        System.out.println(" *********************** L'ORDINATEUR CHOISIT SES COULEURS POUR LE CODE SECRET ************************************");
+        System.out.println(" ****************** L'ORDINATEUR CHOISIT SES COULEURS POUR LE CODE SECRET *******************");
         System.out.println("L'ordinateur a fait son choix de ses " + x +" couleurs pour son code secret !!!");
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
             int nbreH=1+(int)(Math.random()*y);
             tab[counter]= nbreH;
         }
+        logger.debug("le code secret de l'ordinateur est: "+ Arrays.toString(tab));
         return tab;
     }
 
@@ -53,13 +69,14 @@ int nber;
      */
     public int [] trouverCodeSecret(int x,int y){
         System.out.println();
-        System.out.println("C'est au tour de l'ordinateur: ");
-        System.out.println(" *********************** L'ORDINATEUR COMMENCE A CHERCHER VOTRE CODE SECRET ******************************");
+        System.out.println(" ***************** L'ORDINATEUR COMMENCE A CHERCHER VOTRE CODE SECRET ***********************");
+        System.out.println();
         int [] tab = new int [x];
         for (int counter=0;counter<x;counter++){
             int nbreH=1+(int)(Math.random()*y);
             tab[counter]= nbreH;
         }
+        logger.debug("le code proposé de l'ordinateur est: "+ Arrays.toString(tab));
         return tab;
     }
 
@@ -81,6 +98,7 @@ int nber;
                 newtab[counter]=tab2[counter]-1;
             }
         }
+        logger.debug("le nouveau code proposé de l'ordinateur est: "+ Arrays.toString(newtab));
         return newtab;
     }
 
@@ -114,7 +132,7 @@ int nber;
         Combinaison cbienplace=new Combinaison();
         int present= cpresent.nombreChiffrePresent(resultat,nber);
         int bienplace=cbienplace.nombreChiffreBienPlace(resultat,nber);
-        String [] tabC=Result.transformerNumerosEnCouleurs(tableau2,nber);
+        String [] tabC=getResult().transformerNumerosEnCouleurs(tableau2,nber);
         String joinedarray2 = String.join(",",tabC);
         affichageOrdiPropose();
         System.out.println("Proposition: "+ joinedarray2 +"   réponse: "+ " bien placé(s): "+ bienplace + "  présent(s): "+present);
@@ -125,9 +143,8 @@ int nber;
      */
     public void affichageOrdiPropose(){
         System.out.println();
-        System.out.println("C'est au tour de l'ordinateur: ");
-        System.out.println("*************** L'ORDINATEUR A CHERCHE ET PROPOSE UN CODE **************");
-        System.out.println(" *********************** RESULTAT ********************************");
+        System.out.println("*************** L'ORDINATEUR A CHERCHE ET PROPOSE UN CODE **********************************");
+        System.out.println(" *********************** RESULTAT **********************************************************");
     }
 
     /**
@@ -136,7 +153,7 @@ int nber;
      */
     public void victoireOrdinateur(int turn){
         System.out.println();
-        System.out.println("******************** L'ORDINATEUR A GAGNE  ****************************");
+        System.out.println("******************** L'ORDINATEUR A GAGNE  **************************************************");
         System.out.println("Bravo a l'Ordinateur qui a trouvé le code secret en " +turn+" tour(s)!!");
     }
 
@@ -146,9 +163,9 @@ int nber;
      */
     public void defaiteOrdinateur(int [] tableau1){
         System.out.println();
-        System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
-        System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
-        String [] tabC=Result.transformerNumerosEnCouleurs(tableau1,nber);
+        System.out.println("******************** L'ORDINATEUR A PERDU ***************************************************");
+        System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé.");
+        String [] tabC=getResult().transformerNumerosEnCouleurs(tableau1,getNber());
         String joinedarray1 = String.join(",",tabC);
         System.out.println("La solution était: "+ joinedarray1);
     }
@@ -159,8 +176,8 @@ int nber;
      */
     public void defaiteOrdinateurMaster(int [] tableau1){
         System.out.println();
-        System.out.println("******************** L'ORDINATEUR A PERDU ************************************");
-        System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé !");
+        System.out.println("******************** L'ORDINATEUR A PERDU ***************************************************");
+        System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé.");
         String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("La solution était: "+ joinedarray1);
     }
@@ -173,7 +190,8 @@ int nber;
      * @param tmax maxi number of allowed turns in order to find all code secret numbers
      * @return true if the game need to continue or false in other case (victory or defeat)
      */
-    public boolean verificationvictoire(int [] tableau1,int [] tableau2, int turn, int tmax){
+    @Override
+    public boolean verificationVictoire(int [] tableau1,int [] tableau2, int turn, int tmax){
         boolean continuer;
         if ((Arrays.equals(tableau1,tableau2))&&(turn<tmax)) {
             continuer = false;
@@ -182,7 +200,8 @@ int nber;
             defaiteOrdinateur(tableau1);
             continuer = false;
         } else {
-            System.out.println("Il reste "+ (tmax-turn) + " tentative(s) pour trouver le code secret");
+            System.out.println("L'ORDINATEUR a encore "+ (tmax-turn) + " tentative(s) pour trouver le code secret.");
+            System.out.println();
             continuer=true;
         }
         return continuer;
@@ -195,6 +214,7 @@ int nber;
      * @param tmax maxi number of allowed turns in order to find all code secret numbers
      * @return true if the game need to continue or false in other case (victory or defeat)
      */
+    @Override
     public boolean verificationVictoireMaster(int [] tableau1,int [] tableau2, int turn, int tmax){
         boolean continuer;
         if ((Arrays.equals(tableau1,tableau2))&&(turn<tmax)) {
@@ -204,7 +224,8 @@ int nber;
             defaiteOrdinateurMaster(tableau1);
             continuer = false;
         } else {
-            System.out.println("Il reste "+ (tmax-turn) + " tentative(s) pour trouver le code secret");
+            System.out.println("L'ORDINATEUR a encore "+ (tmax-turn) + " tentative(s) pour trouver les couleurs du code secret.");
+            System.out.println();
             continuer=true;
         }
         return continuer;

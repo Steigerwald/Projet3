@@ -1,6 +1,4 @@
-package Enum;
-
-
+package main.java.Enum;
 
 public enum Colors {
     //Objets directement construits
@@ -14,8 +12,8 @@ public enum Colors {
     Saumon(8,"Saumon"),
     Marron (9,"Marron");
 
-    private Integer numero = 0;
-    private String couleur="";
+    private Integer numero;
+    private String couleur;
 
 //Constructeur
     Colors(Integer numero, String couleur) {
