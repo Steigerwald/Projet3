@@ -1,8 +1,6 @@
 package main.java.Class;
 
 
-import java.util.Arrays;
-
 public class Attaquant extends Joueur {
 
     private Joueur joueur = new Joueur();

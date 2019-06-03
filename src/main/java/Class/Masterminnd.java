@@ -223,9 +223,9 @@ public class Masterminnd {
         setTurn(0);
         setTableau1Joueur(getPremierJoueur().saisirMaster(getNber(),getColo()));
         setTableau1Ordi(getOrdiJoueur().saisirCodeSecretMaster(getNber(),getColo()));
-        logger.debug("le code secret de l'ordinateur est: "+ Arrays.toString(getTableau1Joueur()));
-        logger.debug("le code proposé de l'ordinateur est: "+ Arrays.toString(getTableau1Ordi()));
+        logger.debug("le code secret de l'ordinateur est: "+ Arrays.toString(getTableau1Ordi()));
         setTableau2Ordi(getOrdiJoueur().trouverCodeSecret(getNber(),getColo()));
+        logger.debug("le code proposé de l'ordinateur est: "+ Arrays.toString(getTableau2Ordi()));
         boolean continuer1 = true;
         while (continuer1) {
             setTableau2Joueur(getDeuxiemeJoueur().proposerCodeMaster(getNber(),getColo()));

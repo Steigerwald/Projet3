@@ -173,6 +173,7 @@ public class Joueur {
      * Method to check the format of code secret numbers
      * @param rep the code secret numbers
      * @param x number of code numbers
+     * @param colo number of allowed colors
      * @return true if there is a problem or false if it is ok
      */
     public boolean verificationFormatCodeSecretMaster(String rep, int x, int colo){
@@ -241,7 +242,7 @@ public class Joueur {
      * Method for checking if the color choice
      * @param rep2 code of color purposed
      * @param x number of cases for chosen colors
-     * @param colo number of color allowed
+     * @param colo number of allowed colors
      * @return true or false if the checking is ok or no
      */
     public boolean verificationCouleurPossible(String rep2,int x,int colo){

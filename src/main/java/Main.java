@@ -2,15 +2,11 @@ package main.java;
 
 import main.java.Class.*;
 import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.xml.DOMConfigurator;
-import java.io.File;
 
 
 public class Main { public static void main(String[] args){
     PropertyConfigurator.configure("src/main/ressources/log4j.properties");
-    //System.setProperty("log4j.configurationFile", "src/main/resources/log4j2.xml");
-    //DOMConfigurator.configure("src/main/ressources/log4j2.xml");
-    Joueur premierJoueur=new Defenseur();
+    Joueur premierJoueur=new Joueur();
     Rechercheplus jeu1=new Rechercheplus();
     Masterminnd jeu2=new Masterminnd();
     int menu;

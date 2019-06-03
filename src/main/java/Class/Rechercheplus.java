@@ -224,8 +224,8 @@ public class Rechercheplus {
         setTurn(0);
         String autreCode2 = getPremierJoueur().saisir(getNber());
         setTableau1Ordi(getOrdiJoueur().saisirCodeSecret(getNber(),getColo()));
-        setTableau2Ordi(getOrdiJoueur().trouverCodeSecret(getNber(),getColo()));
         logger.debug("le code secret de l'ordinateur est: "+ Arrays.toString(getTableau1Ordi()));
+        setTableau2Ordi(getOrdiJoueur().trouverCodeSecret(getNber(),getColo()));
         logger.debug("le code proposé de l'ordinateur est: "+ Arrays.toString(getTableau2Ordi()));
         boolean continuer1 = true;
         while (continuer1) {

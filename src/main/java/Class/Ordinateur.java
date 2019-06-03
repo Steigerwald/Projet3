@@ -57,7 +57,7 @@ public class Ordinateur extends Affichage {
             int nbreH=1+(int)(Math.random()*y);
             tab[counter]= nbreH;
         }
-        logger.debug("le code secret de l'ordinateur est: "+ Arrays.toString(tab));
+        logger.trace("le code secret de l'ordinateur a été choisi");
         return tab;
     }
 
@@ -76,7 +76,7 @@ public class Ordinateur extends Affichage {
             int nbreH=1+(int)(Math.random()*y);
             tab[counter]= nbreH;
         }
-        logger.debug("le code proposé de l'ordinateur est: "+ Arrays.toString(tab));
+        logger.trace("le code secret de l'ordinateur a été proposé");;
         return tab;
     }
 

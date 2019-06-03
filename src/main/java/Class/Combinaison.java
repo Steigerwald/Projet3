@@ -2,7 +2,6 @@ package main.java.Class;
 
 import main.java.Enum.Colors;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Combinaison {
 

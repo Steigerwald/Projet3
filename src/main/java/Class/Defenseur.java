@@ -5,7 +5,6 @@ package main.java.Class;
 
     private Affichage tableCouleurs = new Affichage();
     private Combinaison result=new Combinaison();
-    private Combinaison reponse=new Combinaison();
 
       //Getters
        public Affichage getTableCouleurs() {
@@ -16,9 +15,6 @@ package main.java.Class;
            return result;
        }
 
-       public Combinaison getReponse() {
-           return reponse;
-       }
 
        /**
      * Method for the defender in order to choice the secret code numbers
@@ -64,5 +60,4 @@ package main.java.Class;
         System.out.println();
         return tab;
     }
-
 }
