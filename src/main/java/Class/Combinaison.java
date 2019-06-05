@@ -62,7 +62,7 @@ public class Combinaison {
         return result;
     }
     /**
-     * Method to get the quantiy of String "présent" in the resultat
+     * Method to get the quantity of String "présent" in the resultat
      * @param resultat array that includes the result of the comparison
      * @param x number of code numbers
      * @return number of time that you find "présent" in result
