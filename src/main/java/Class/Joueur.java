@@ -1,25 +1,212 @@
 package main.java.Class;
 
 import java.util.Scanner;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 public class Joueur {
-    public final Logger logger= LogManager.getLogger(Joueur.class);
-    protected Scanner sc = new Scanner (System.in);
+    public final Logger logger = LogManager.getLogger(Joueur.class);
+    protected Scanner sc = new Scanner(System.in);
     private Combinaison couleurPossible = new Combinaison();
+    private Affichage modeDeJeu =new Affichage();
+    private Affichage jeu = new Affichage();
 
     protected String rep1;
     private String rep;
     private int mode;
 
+    /**
+     * Method to choice the game for players
+     *
+     * @return the first character of the answer as integer
+     */
+    public int choixduModejeu() {
+        boolean problem;
+        do {
+            do {
+                getModeDeJeu().affichageModeDeJeu();
+                setRep((getSc().nextLine()));
+                problem = verificationSaisieChiffre(getRep());
+            } while (problem);
+            setMode(Integer.parseInt(Character.toString(getRep().charAt(0))));
+            getModeDeJeu().affichageChoixDuMode(getMode());
+        } while (getMode() > 3);
+
+        return getMode();
+    }
+
+    /**
+     * Method in order to get O or N to play again used in main class
+     *
+     * @return boolean false or true
+     */
+    public boolean rejouer() {
+        boolean r;
+        System.out.println("Voulez vous rejouer? Tapez (O) pour OUI sinon tapez une autre touche pour quitter!");
+        String answer = getSc().nextLine();
+        answer = answer.toUpperCase();
+        char carc = answer.charAt(0);
+        if (carc == 'O') {
+            r = true;
+        } else {
+            r = false;
+            System.out.println("Vous avez choisi de quitter le jeu, bonne continuation !!!");
+        }
+        return r;
+    }
+
+    /**
+     * Method to select the game for the player
+     *
+     * @return the choice of the player integer 1 or 2
+     */
+    public int choixdujeu() {
+        int choice;
+        boolean problem = false;
+        do {
+            do {
+                getJeu().affichageDesJeux();
+                setRep1((getSc().nextLine()));
+                problem = verificationSaisieChiffre(getRep1());
+            }
+            while (problem);
+            choice = Integer.parseInt(Character.toString(getRep1().charAt(0)));
+            getJeu().affichageChoixDuJeu(choice);
+        }
+        while (choice > 3);
+        return choice;
+    }
+
+    /**
+     * Method to check the format of code secret numbers
+     *
+     * @param rep the code secret numbers
+     * @param x   number of code numbers
+     * @return true if there is a problem or false if it is ok
+     */
+    public boolean verificationFormatCodeSecret(String rep, int x) {
+        boolean value;
+
+        if ((rep.length()) > x) {
+            logger.error("trop de caractères saisis");
+            System.out.println("vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
+            System.out.println("retapez un nouveau code à " + x + " chiffre(s) svp !");
+            value = true;
+        } else if (rep.length() < x) {
+            logger.error("pas assez de caractères saisis");
+            System.out.println("vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
+            System.out.println("retapez un nouveau code à " + x + " chiffre(s) svp !");
+            value = true;
+        } else {
+            value = verificationSaisieChiffre(rep);
+        }
+        return value;
+    }
+
+    /**
+     * Method to check the format of code secret numbers
+     *
+     * @param rep  the code secret numbers
+     * @param x    number of code numbers
+     * @param colo number of allowed colors
+     * @return true if there is a problem or false if it is ok
+     */
+    public boolean verificationFormatCodeSecretMaster(String rep, int x, int colo) {
+        boolean vrai = false;
+        if ((rep.length()) > x) {
+            logger.error("trop de caractères saisis");
+            System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
+            System.out.println("retapez un nouveau code à " + x + " couleur(s) svp !");
+            vrai = true;
+        } else if (rep.length() < x) {
+            logger.error("pas assez de caractères saisis");
+            System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
+            System.out.println("retapez " + x + " couleurs(s) svp !");
+            vrai = true;
+        } else if (verificationSaisieLettre(rep)) {
+            logger.error("erreur de caractères saisis");
+            System.out.println("vous avez une erreur de saisie de lettre");
+            vrai = true;
+        } else if (verificationCouleurPossible(rep, x, colo)) {
+            logger.error("couleur non disponible");
+            System.out.println("vous avez une erreur de saisie de choix de couleurs autorisées");
+            vrai = true;
+        }
+        if (vrai) {
+            System.out.println("Vous devez ressaisir ce code");
+        }
+        return vrai;
+    }
+
+    /**
+     * Method to check the format of the purposed code numbers : is it a number?
+     *
+     * @param rep2 the purposed code numbers
+     * @return true if there is a problem or false if it is ok
+     */
+    public boolean verificationSaisieChiffre(String rep2) {
+        boolean problem = false;
+        try {
+            Integer.parseInt(rep2);
+        } catch (NumberFormatException e1) {
+            logger.error("problem de caractère saisi");
+            System.out.println("Un des chiffres du code tapé est une lettre, le code ne doit comporter que des chiffres !!");
+            System.out.println("Vous devez ressaisir ce code");
+            problem = true;
+        }
+        return problem;
+    }
+
+    /**
+     * Method to check the format of the purposed code colors, is it a letter?
+     *
+     * @param rep2 the purposed code colors
+     * @return true if there is a problem or false if it is ok
+     */
+    public boolean verificationSaisieLettre(String rep2) {
+        boolean problem = false;
+        for (int i = 0; i < rep2.length(); i++) {
+            problem = Character.isDigit(rep2.charAt(i));
+            if (problem) {
+                logger.error("erreur de caractère saisi");
+                System.out.println("le caractère en position: " + (i + 1) + " du code saisi est un chiffre et non une lettre !!");
+                problem = true;
+            }
+        }
+        return problem;
+    }
+
+    /**
+     * Method for checking if the color choice
+     *
+     * @param rep2 code of color purposed
+     * @param x    number of cases for chosen colors
+     * @param colo number of allowed colors
+     * @return true or false if the checking is ok or no
+     */
+    public boolean verificationCouleurPossible(String rep2, int x, int colo) {
+        boolean problem = false;
+        int[] tabcouleurReponse = getCouleurPossible().transformerPremieresLettresEnNumero(rep2, x);
+        for (int i = 0; i < rep2.length(); i++) {
+            if (tabcouleurReponse[i] == 0 || tabcouleurReponse[i] > colo) {
+                logger.error("erreur de caractère saisi");
+                System.out.println("le caractère en position: " + (i + 1) + " du code saisi n'est pas une lettre autorisée !!");
+                problem = true;
+            }
+        }
+        return problem;
+    }
+
     //Getters
     public String getRep1() {
         return rep1;
     }
+
     public String getRep() {
         return rep;
     }
+
     public int getMode() {
         return mode;
     }
@@ -32,6 +219,10 @@ public class Joueur {
         return couleurPossible;
     }
 
+    public Affichage getModeDeJeu(){ return modeDeJeu;}
+
+    public Affichage getJeu() { return jeu;}
+
     //Setters
     public void setMode(int mode) {
         this.mode = mode;
@@ -43,219 +234,6 @@ public class Joueur {
 
     public void setRep(String rep) {
         this.rep = rep;
-    }
-
-
-
-
-    /**
-     * Method to choice the game for players
-     * @return the first character of the answer as integer
-     */
-    public int choixduModejeu(){
-        boolean problem;
-       do {
-           do {
-               System.out.println("A quel mode de jeu voulez-vous jouer? ");
-               System.out.println();
-               System.out.println("1 Mode Challenger");
-               System.out.println("2 Mode Défenseur");
-               System.out.println("3 Mode Duel");
-               setRep((getSc().nextLine()));
-               problem = verificationSaisieChiffre(getRep());
-           } while (problem);
-           setMode(Integer.parseInt(Character.toString(getRep().charAt(0))));
-           switch (getMode()) {
-               case 1:
-                   System.out.println("Vous avez choisi de jouer au Mode Challenger");
-                   break;
-               case 2:
-                   System.out.println("Vous avez choisi de jouer au Mode Défenseur");
-                   break;
-               case 3:
-                   System.out.println("Vous avez choisi de jouer au Mode Duel");
-                   break;
-               default:
-                   System.out.println("Vous n'avez pas saisi le bon numéro pour le choix de votre jeu !!!");
-                   System.out.println("Ressaisissez votre choix de jeu");
-                   break;
-           }
-       } while (getMode()>3);
-
-        return getMode();
-    }
-
-    /**
-     * Method in order to get O or N to play again used in main class
-     * @return boolean false or true
-     */
-    public boolean rejouer (){
-        boolean r;
-        System.out.println("Voulez vous rejouer? Tapez (O) pour OUI sinon tapez une autre touche pour quitter!");
-        String answer = getSc().nextLine();
-        answer = answer.toUpperCase();
-        char carc = answer.charAt(0);
-        if (carc == 'O') {
-            r=true;
-        }
-        else {
-            r=false;
-            System.out.println("Vous avez choisi de quitter le jeu, bonne continuation !!!");
-        }
-        return r;
-    }
-
-    /**
-     * Method to select the game for the player
-     * @return the choice of the player integer 1 or 2
-     */
-    public int choixdujeu(){
-        int choice;
-        boolean problem=false;
-        do {
-            do {
-                System.out.println("A quel jeu voulez-vous jouer? ");
-                System.out.println();
-                System.out.println("1 RECHERCHE PLUS OU MOINS ");
-                System.out.println("2 MASTERMIND");
-                System.out.println("3 QUITTER");
-                setRep1((getSc().nextLine()));
-                problem = verificationSaisieChiffre(getRep1());
-            }
-            while (problem);
-            choice = Integer.parseInt(Character.toString(getRep1().charAt(0)));
-            switch (choice) {
-                case 1:
-                    System.out.println("Vous avez choisi de jouer à RECHERCHE PLUS OU MOINS");
-                    break;
-                case 2:
-                    System.out.println("Vous avez choisi de jouer à MASTERMIND");
-                    break;
-                case 3:
-                    System.out.println("Vous avez choisi de quitter le jeu, au revoir !!!");
-                    break;
-                default:
-                    System.out.println("Vous n'avez pas saisi le bon numéro pour le choix de votre jeu !!!");
-                    System.out.println("Ressaisissez votre choix de jeu");
-                    break;
-            }
-        }
-        while (choice>3);
-        return choice;
-    }
-
-    /**
-     * Method to check the format of code secret numbers
-     * @param rep the code secret numbers
-     * @param x number of code numbers
-     * @return true if there is a problem or false if it is ok
-     */
-    public boolean verificationFormatCodeSecret(String rep, int x){
-        boolean value;
-
-        if ((rep.length()) > x) {
-            logger.error("trop de caractères saisis");
-            System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à "+ x +" chiffre(s) svp !");
-            value=true;
-        } else if (rep.length() < x) {
-            logger.error("pas assez de caractères saisis");
-            System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à "+ x + " chiffre(s) svp !");
-            value=true;
-        } else{
-            value=verificationSaisieChiffre(rep);
-        }
-        return value;
-    }
-
-    /**
-     * Method to check the format of code secret numbers
-     * @param rep the code secret numbers
-     * @param x number of code numbers
-     * @param colo number of allowed colors
-     * @return true if there is a problem or false if it is ok
-     */
-    public boolean verificationFormatCodeSecretMaster(String rep, int x, int colo){
-        boolean vrai=false;
-        if ((rep.length()) > x) {
-            logger.error("trop de caractères saisis");
-            System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à "+ x +" couleur(s) svp !");
-            vrai=true;
-        } else if (rep.length() < x) {
-            logger.error("pas assez de caractères saisis");
-            System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
-            System.out.println("retapez " + x + " couleurs(s) svp !");
-            vrai = true;
-        }else if(verificationSaisieLettre(rep)){
-            logger.error("erreur de caractères saisis");
-            System.out.println("vous avez une erreur de saisie de lettre");
-            vrai=true;
-        } else if (verificationCouleurPossible(rep,x,colo)) {
-            logger.error("couleur non disponible");
-            System.out.println("vous avez une erreur de saisie de choix de couleurs autorisées");
-            vrai=true;
-        }
-        if (vrai) {
-            System.out.println("Vous devez ressaisir ce code");
-        }
-        return vrai;
-    }
-
-    /**
-     * Method to check the format of the purposed code numbers : is it a number?
-     * @param rep2 the purposed code numbers
-     * @return true if there is a problem or false if it is ok
-     */
-    public boolean verificationSaisieChiffre(String rep2){
-        boolean problem=false;
-        try {
-            Integer.parseInt(rep2);
-        } catch (NumberFormatException e1) {
-            logger.error("problem de caractère saisi");
-            System.out.println("Un des chiffres du code tapé est une lettre, le code ne doit comporter que des chiffres !!");
-            System.out.println("Vous devez ressaisir ce code");
-            problem = true;
-        }
-        return problem;
-    }
-    /**
-     * Method to check the format of the purposed code colors, is it a letter?
-     * @param rep2 the purposed code colors
-     * @return true if there is a problem or false if it is ok
-     */
-    public boolean verificationSaisieLettre(String rep2){
-        boolean problem=false;
-        for (int i=0;i<rep2.length();i++){
-                problem = Character.isDigit(rep2.charAt(i));
-                if (problem) {
-                    logger.error("erreur de caractère saisi");
-                    System.out.println("le caractère en position: "+(i+1)+" du code saisi est un chiffre et non une lettre !!");
-                    problem=true;
-                }
-        }
-        return problem;
-    }
-
-    /**
-     * Method for checking if the color choice
-     * @param rep2 code of color purposed
-     * @param x number of cases for chosen colors
-     * @param colo number of allowed colors
-     * @return true or false if the checking is ok or no
-     */
-    public boolean verificationCouleurPossible(String rep2,int x,int colo){
-        boolean problem=false;
-        int [] tabcouleurReponse=getCouleurPossible().transformerPremieresLettresEnNumero(rep2,x);
-        for (int i=0;i<rep2.length();i++){
-            if (tabcouleurReponse[i]==0 || tabcouleurReponse[i]>colo) {
-                logger.error("erreur de caractère saisi");
-                System.out.println("le caractère en position: "+(i+1)+" du code saisi n'est pas une lettre autorisée !!");
-                problem=true;
-            }
-        }
-        return problem;
     }
 
 }
