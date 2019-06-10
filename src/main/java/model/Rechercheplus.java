@@ -1,15 +1,14 @@
-package main.java.Class;
+package main.java.model;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Masterminnd {
-    public final Logger logger = LogManager.getLogger(Masterminnd.class);
+public class Rechercheplus {
+    public final Logger logger = LogManager.getLogger(Rechercheplus.class);
     private int nber = 4;
-    private int colo = 7;
+    private int colo = 8;
     private int turn = 0;
     private final int tmax = 12;
     private Defenseur premierJoueur = new Defenseur();
@@ -21,9 +20,9 @@ public class Masterminnd {
     private int[] tableau2Ordi;
     private int[] tableau1Joueur;
     private int[] tableau2Joueur;
-    private ArrayList<String> resultat1;
-    private ArrayList<String> resultat2;
-    private ArrayList<String> resultat;
+    private String[] resultat1;
+    private String[] resultat2;
+    String[] resultat;
     private Combinaison Result = new Combinaison();
     private Affichage resultJoueur = new Affichage();
     private Affichage resultOrdi = new Ordinateur();
@@ -31,89 +30,94 @@ public class Masterminnd {
 
 
     /**
-     * Method to launch the Mastermind game
+     * Method to launch the Rechercheplus game
      */
-    public void lancementJeuMastermind() {
-        System.out.println("========================== JEU MASTERMIND  ============================\n");
+    public void lancementJeuRecherchePlus() {
+        System.out.println("====================== JEU DU RECHERCHE PLUS OU MOINS  =====================================\n");
         int mode = getPremierJoueur().choixduModejeu();
         switch (mode) {
             case 1:
-                modeChallengerMaster();
+                modeChallenger();
                 break;
             case 2:
-                modeDefenseurMaster();
+                modeDefenseur();
                 break;
             case 3:
-                modeDuelMaster();
+                modeDuel();
                 break;
         }
     }
 
     /**
-     * Method to launch the Challenger mode for Mastermind game
+     * Method to launch the Challenger mode
      */
-    public void modeChallengerMaster() {
-        System.out.println("********** Mode Challenger MASTERMIND ************");
+    public void modeChallenger() {
+        System.out.println("********* Mode Challenger R+ ************");
         setTurn(0);
-        setTableau1(getOrdiJoueur().saisirCodeSecretMaster(getNber(), getColo()));
+        setTableau1(getOrdiJoueur().saisirCodeSecret(getNber(), getColo()));
         logger.debug(Arrays.toString(getTableau1()));
         setContinuer(true);
         while (isContinuer()) {
-            setTableau2(getDeuxiemeJoueur().proposerCodeMaster(getNber(), getColo()));
-            setResultat(getResult().comparerMaster(getTableau1(), getTableau2(), getNber()));
+            String codeProposer = getDeuxiemeJoueur().proposer(getNber());
+            setTableau2(getResult().decouper(codeProposer, getNber()));
+            setResultat(getResult().comparer(getTableau1(), getTableau2(), getNber()));
             setTurn(getTurn() + 1);
-            getResultJoueur().afficherResultatMaster(getTableau1(), getTableau2(), getResultat(), getTurn(), getTmax(), getNber());
-            setContinuer(getResultJoueur().verificationVictoireMaster(getTableau1(), getTableau2(), getTurn(), getTmax()));
+            getResultJoueur().afficherResultat(getTableau1(), getTableau2(), getResultat(), getTurn(), getTmax(), getNber());
+            setContinuer(getResultJoueur().verificationVictoire(getTableau1(), getTableau2(), getTurn(), getTmax()));
             System.out.println();
         }
     }
 
     /**
-     * Method to launch the Defender mode for Mastermind game
+     * Method to launch the Défenseur mode
      */
-    public void modeDefenseurMaster() {
-        System.out.println("********** Mode Défenseur MASTERMIND *************");
+    public void modeDefenseur() {
+        System.out.println("******** Mode Défenseur R+ ************");
         setTurn(0);
-        getResultJoueur().afficherCouleursDisponibles(getColo());
-        setTableau1(getPremierJoueur().saisirMaster(getNber(), getColo()));
+        String autreCode1 = getPremierJoueur().saisir(getNber());
+        System.out.println(autreCode1);
         setContinuer(true);
         setTableau2(getOrdiJoueur().trouverCodeSecret(getNber(), getColo()));
         logger.debug("première proposition de l'ordinateur: " + Arrays.toString(getTableau2()));
         while (isContinuer()) {
-            setResultat(getResult().comparerMaster(getTableau1(), getTableau2(), getNber()));
+            setTableau1(getResult().decouper(autreCode1, getNber()));
+            setResultat(getResult().comparer(getTableau1(), getTableau2(), getNber()));
             setTurn(getTurn() + 1);
-            getResultOrdi().afficherResultatMaster(getTableau1(), getTableau2(), getResultat(), getTurn(), getTmax(), getNber());
-            setContinuer(getResultOrdi().verificationVictoireMaster(getTableau1(), getTableau2(), getTurn(), getTmax()));
+            getResultOrdi().afficherResultat(getTableau1(), getTableau2(), getResultat(), getTurn(), getTmax(), getNber());
+            setContinuer(getResultOrdi().verificationVictoire(getTableau1(), getTableau2(), getTurn(), getTmax()));
             setTableau2(getOrdiJoueur().AnalyseOrdi(getTableau1(), getTableau2(), getNber()));
             System.out.println();
         }
     }
 
     /**
-     * Method to launch the Dual mode for Mastermind game
+     * Method to launch the Duel mode
      */
-    public void modeDuelMaster() {
-        System.out.println("************* Mode Duel MASTERMIND ***************");
+    public void modeDuel() {
+        System.out.println("************ Mode Duel R+ ***************");
         setTurn(0);
-        setTableau1Joueur(getPremierJoueur().saisirMaster(getNber(), getColo()));
-        setTableau1Ordi(getOrdiJoueur().saisirCodeSecretMaster(getNber(), getColo()));
+        String autreCode2 = getPremierJoueur().saisir(getNber());
+        setTableau1Ordi(getOrdiJoueur().saisirCodeSecret(getNber(), getColo()));
         logger.debug("le code secret de l'ordinateur est: " + Arrays.toString(getTableau1Ordi()));
         setTableau2Ordi(getOrdiJoueur().trouverCodeSecret(getNber(), getColo()));
         logger.debug("le code proposé de l'ordinateur est: " + Arrays.toString(getTableau2Ordi()));
         boolean continuer1 = true;
         while (continuer1) {
-            setTableau2Joueur(getDeuxiemeJoueur().proposerCodeMaster(getNber(), getColo()));
-            setResultat1(getResult().comparerMaster(getTableau1Ordi(), getTableau2Joueur(), getNber()));
-            setResultat2(getResult().comparerMaster(getTableau1Joueur(), getTableau2Ordi(), getNber()));
+            String codeProposer = getDeuxiemeJoueur().proposer(getNber());
+            setTableau1Joueur(getResult().decouper(autreCode2, getNber()));
+            setTableau2Joueur(getResult().decouper(codeProposer, getNber()));
+            setResultat1(getResult().comparer(getTableau1Ordi(), getTableau2Joueur(), getNber()));
+            setResultat2(getResult().comparer(getTableau1Joueur(), getTableau2Ordi(), getNber()));
             setTurn(getTurn() + 1);
-            getResultJoueur().afficherResultatMaster(getTableau1Ordi(), getTableau2Joueur(), getResultat1(), getTurn(), getTmax(), getNber());
-            getResultOrdi().afficherResultatMaster(getTableau1Joueur(), getTableau2Ordi(), getResultat2(), getTurn(), getTmax(), getNber());
-            System.out.println("========================================================================================================");
-            continuer1 = getResultJoueur().verificationVictoireDuelMaster(getTableau1Joueur(), getTableau2Ordi(), getTableau1Ordi(), getTableau2Joueur(), getTurn(), getTmax(), getNber());
+            getResultJoueur().afficherResultat(getTableau1Ordi(), getTableau2Joueur(), getResultat1(), getTurn(), getTmax(), getNber());
+            getResultOrdi().afficherResultat(getTableau1Joueur(), getTableau2Ordi(), getResultat2(), getTurn(), getTmax(), getNber());
+            System.out.println("========================================================================================");
+            continuer1 = getResultJoueur().verificationVictoireDuel(getTableau1Joueur(), getTableau2Ordi(), getTableau1Ordi(), getTableau2Joueur(), getTurn(), getTmax());
             setTableau2Ordi(getOrdiJoueur().AnalyseOrdi(getTableau1Joueur(), getTableau2Ordi(), getNber()));
             System.out.println();
         }
     }
+
 
     //getters
     public int getNber() {
@@ -168,15 +172,15 @@ public class Masterminnd {
         return tableau2Joueur;
     }
 
-    public ArrayList<String> getResultat1() {
+    public String[] getResultat1() {
         return resultat1;
     }
 
-    public ArrayList<String> getResultat2() {
+    public String[] getResultat2() {
         return resultat2;
     }
 
-    public ArrayList<String> getResultat() {
+    public String[] getResultat() {
         return resultat;
     }
 
@@ -196,7 +200,7 @@ public class Masterminnd {
         return continuer;
     }
 
-    //Setters
+    //setters
     public void setTurn(int turn) {
         this.turn = turn;
     }
@@ -205,16 +209,8 @@ public class Masterminnd {
         this.tableau1 = tableau1;
     }
 
-    public void setContinuer(boolean continuer) {
-        this.continuer = continuer;
-    }
-
     public void setTableau2(int[] tableau2) {
         this.tableau2 = tableau2;
-    }
-
-    public void setResultat(ArrayList<String> resultat) {
-        this.resultat = resultat;
     }
 
     public void setTableau1Ordi(int[] tableau1Ordi) {
@@ -233,12 +229,21 @@ public class Masterminnd {
         this.tableau2Joueur = tableau2Joueur;
     }
 
-    public void setResultat1(ArrayList<String> resultat1) {
+    public void setResultat1(String[] resultat1) {
         this.resultat1 = resultat1;
     }
 
-    public void setResultat2(ArrayList<String> resultat2) {
+    public void setResultat2(String[] resultat2) {
         this.resultat2 = resultat2;
     }
+
+    public void setResultat(String[] resultat) {
+        this.resultat = resultat;
+    }
+
+    public void setContinuer(boolean continuer) {
+        this.continuer = continuer;
+    }
+
 
 }

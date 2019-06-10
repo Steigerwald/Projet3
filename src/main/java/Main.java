@@ -1,6 +1,6 @@
 package main.java;
 
-import main.java.Class.*;
+import main.java.model.*;
 import org.apache.log4j.PropertyConfigurator;
 
 

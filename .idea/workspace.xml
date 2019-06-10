@@ -4,11 +4,17 @@
     <list default="true" id="e3c6dde4-8e42-4354-8b9c-aaa2b4fe582f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Affichage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Masterminnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Masterminnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Ordinateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Ordinateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Affichage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Attaquant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Attaquant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Combinaison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Combinaison.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Defenseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Defenseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Masterminnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Masterminnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Ordinateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ordinateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Rechercheplus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Enum/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/type/Colors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ressources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ressources/log4j.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,7 +27,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Defenseur.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Defenseur.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
@@ -30,23 +36,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Affichage.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Affichage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-516">
-              <caret line="400" lean-forward="true" selection-start-line="400" selection-end-line="400" />
+            <state relative-caret-position="6772">
+              <caret line="400" selection-start-line="400" selection-end-line="400" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#21396#21397#0" expanded="true" />
-                <element signature="e#21423#21424#0" expanded="true" />
-                <element signature="e#21461#21462#0" expanded="true" />
-                <element signature="e#21490#21491#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Attaquant.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Attaquant.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
@@ -55,9 +57,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Combinaison.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Combinaison.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1304">
+            <state relative-caret-position="17">
               <caret line="105" column="7" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,17 +71,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Joueur.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Joueur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="121" column="24" lean-forward="true" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
+            <state relative-caret-position="2029">
+              <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,10 +90,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Masterminnd.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Masterminnd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="675">
+              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,10 +102,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Ordinateur.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Ordinateur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3791">
-              <caret line="223" column="25" lean-forward="true" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
+            <state relative-caret-position="550">
+              <caret line="223" column="25" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,10 +114,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Rechercheplus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state relative-caret-position="527">
+              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,7 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/JeuCombinaison/Rechercheplus.java" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Affichage.java" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Combinaison.java" />
         <option value="$PROJECT_DIR$/src/JeuCombinaison/Defenseur.java" />
@@ -193,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Enum/Colors.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Combinaison.java" />
-        <option value="$PROJECT_DIR$/src/main/ressources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Attaquant.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Defenseur.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Ordinateur.java" />
@@ -201,6 +201,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Affichage.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Joueur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Defenseur.java" />
+        <option value="$PROJECT_DIR$/src/main/ressources/log4j.properties" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -239,7 +241,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,7 +272,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Class" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JeuRechercheCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JeuRechercheCode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="type" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JeuRechercheCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JeuRechercheCode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="ressources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JeuRechercheCode" type="b2602c69:ProjectViewProjectNode" />
@@ -296,10 +312,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560152429462" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560189502501" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -387,9 +404,36 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33509833" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34039333" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48861912" weight="0.3251634" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49848256" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4939302" weight="0.33006537" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51138085" side_tool="true" weight="0.3338926" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32843137" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49241275" weight="0.32843137" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Maven" order="1" weight="0.1096823" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.022692889" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34039333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -415,34 +459,6 @@
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.022692889" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31013617" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48861912" weight="0.3251634" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49848256" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4939302" weight="0.33006537" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51138085" side_tool="true" weight="0.3338926" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32885906" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49241275" weight="0.32843137" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven" order="1" weight="0.1096823" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Ant Build" order="7" visible="true" weight="0.022692889" />
     </layout-to-restore>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -495,13 +511,6 @@
     <entry file="file://$PROJECT_DIR$/JeuRechercheCode.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ressources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/function/IntFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -509,10 +518,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Enum/Colors.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/type/Colors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ressources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -526,44 +542,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Defenseur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Affichage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Affichage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-516">
-          <caret line="400" lean-forward="true" selection-start-line="400" selection-end-line="400" />
+        <state relative-caret-position="6772">
+          <caret line="400" selection-start-line="400" selection-end-line="400" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#21396#21397#0" expanded="true" />
-            <element signature="e#21423#21424#0" expanded="true" />
-            <element signature="e#21461#21462#0" expanded="true" />
-            <element signature="e#21490#21491#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Attaquant.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Attaquant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Combinaison.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Combinaison.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1304">
+        <state relative-caret-position="17">
           <caret line="105" column="7" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -571,40 +576,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Joueur.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Defenseur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="24" lean-forward="true" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Joueur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2029">
+          <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Ordinateur.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Masterminnd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3791">
-          <caret line="223" column="25" lean-forward="true" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
+        <state relative-caret-position="675">
+          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Masterminnd.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Ordinateur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="550">
+          <caret line="223" column="25" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Rechercheplus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        <state relative-caret-position="527">
+          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,4 +1,4 @@
-package main.java.Enum;
+package main.java.type;
 
 public enum Colors {
     //Objets directement construits

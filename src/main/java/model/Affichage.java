@@ -1,10 +1,10 @@
-package main.java.Class;
+package main.java.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import main.java.Enum.Colors;
+import main.java.type.Colors;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

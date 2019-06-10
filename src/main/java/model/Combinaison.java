@@ -1,6 +1,6 @@
-package main.java.Class;
+package main.java.model;
 
-import main.java.Enum.Colors;
+import main.java.type.Colors;
 
 import java.util.ArrayList;
 
