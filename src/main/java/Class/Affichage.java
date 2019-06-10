@@ -47,8 +47,7 @@ public class Affichage {
         int bienplace = cbienplace.nombreChiffreBienPlace(resultat, nber);
         String[] tabC = getResult().transformerNumerosEnCouleurs(tableau2, nber);
         String joinedarray2 = String.join(",", tabC);
-        System.out.println();
-        System.out.println(" *********************** RESULTAT DU JOUEUR **********************************************");
+        System.out.println("\n *********************** RESULTAT DU JOUEUR **********************************************");
         System.out.println("Proposition: " + joinedarray2 + "   réponse: " + " bien placé(s): " + bienplace + "  présent(s): " + present);
     }
 
@@ -59,8 +58,7 @@ public class Affichage {
      * @param resultat2 result + or - or =
      */
     public void resultatDuJoueur(String resultat1, String resultat2) {
-        System.out.println();
-        System.out.println(" *********************** RESULTAT DU JOUEUR **********************************************");
+        System.out.println("\n *********************** RESULTAT DU JOUEUR **********************************************");
         System.out.println("Proposition: " + resultat1 + "   réponse: " + resultat2);
     }
 
@@ -70,8 +68,7 @@ public class Affichage {
      * @param turn number of turn that the player use in order to find all code secret numbers
      */
     public static void victoireDuJoueur(int turn) {
-        System.out.println();
-        System.out.println("******************** FELICIATIONS AU JOUEUR ***********************************************");
+        System.out.println("\n ******************** FELICIATIONS AU JOUEUR ***********************************************");
         System.out.println("Bravo! vous  avez trouvé le code secret en " + turn + " tour(s).");
     }
 
@@ -81,8 +78,7 @@ public class Affichage {
      * @param tableau1 the code secret numbers that the player had to find
      */
     public void defaiteDuJoueurNbreTour(int[] tableau1) {
-        System.out.println();
-        System.out.println("******************** DEFAITE DU JOUEUR ******************************************************");
+        System.out.println("\n ******************** DEFAITE DU JOUEUR ******************************************************");
         System.out.println(" Malheureusement, vous avez perdu, le nombre de tentatives autorisées est dépassé !");
         String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("La solution était: " + joinedarray1);
@@ -94,8 +90,7 @@ public class Affichage {
      * @param tableau1 the code secret numbers that the player had to find
      */
     public void defaiteDuJoueurMaster(int[] tableau1) {
-        System.out.println();
-        System.out.println("******************** DEFAITE DU JOUEUR ***********************************************************");
+        System.out.println("\n ******************** DEFAITE DU JOUEUR ***********************************************************");
         System.out.println(" Malheureusement, vous avez perdu, le nombre de tentatives autorisées est dépassé !");
         String[] tabC = getResult().transformerNumerosEnCouleurs(tableau1, getNber());
         String joinedarray1 = String.join(",", tabC);
@@ -120,8 +115,7 @@ public class Affichage {
             defaiteDuJoueurNbreTour(tableau1);
             continuer = false;
         } else {
-            System.out.println("Le JOUEUR a encore " + (tmax - turn) + " tentative(s) pour trouver le code secret.");
-            System.out.println();
+            System.out.println("Le JOUEUR a encore " + (tmax - turn) + " tentative(s) pour trouver le code secret.\n");
             continuer = true;
         }
         return continuer;
@@ -156,8 +150,7 @@ public class Affichage {
             AffichageSolutionsNumeriques(tableau1Joueur, tableau1Ordi, turn);
             continuer = false;
         } else {
-            System.out.println("Le JOUEUR et l'ORDINATEUR  ont encore " + (tmax - turn) + " tentative(s) pour trouver le code secret.");
-            System.out.println();
+            System.out.println("Le JOUEUR et l'ORDINATEUR  ont encore " + (tmax - turn) + " tentative(s) pour trouver le code secret.\n");
             continuer = true;
         }
         return continuer;
@@ -173,8 +166,7 @@ public class Affichage {
         String liaisonTableau1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
         String liaisonTableau2 = Arrays.stream(tableau2).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("les solutions étaient : ");
-        System.out.println("Le code " + liaisonTableau1 + " pour le JOUEUR");
-        System.out.println("Le code " + liaisonTableau2 + " pour l'ORDINATEUR");
+        System.out.println("Le code " + liaisonTableau1 + " pour le JOUEUR"+"\nLe code " + liaisonTableau2 + " pour l'ORDINATEUR");
         System.out.println("Le nombre de tours effectués: " + turn);
     }
 
@@ -196,8 +188,7 @@ public class Affichage {
             defaiteDuJoueurMaster(tableau1);
             continuer = false;
         } else {
-            System.out.println("Le JOUEUR a encore " + (tmax - turn) + " tentative(s) pour trouver les couleurs du code secret.");
-            System.out.println();
+            System.out.println("Le JOUEUR a encore " + (tmax - turn) + " tentative(s) pour trouver les couleurs du code secret.\n");
             continuer = true;
         }
         return continuer;
@@ -232,8 +223,7 @@ public class Affichage {
             AffichageSolutionsCouleurs(tableau1Joueur, tableau1Ordi, turn, nber);
             continuer = false;
         } else {
-            System.out.println("Le JOUEUR et l'ORDINATEUR  ont encore " + (tmax - turn) + " tentative(s) pour trouver le code secret");
-            System.out.println();
+            System.out.println("Le JOUEUR et l'ORDINATEUR  ont encore " + (tmax - turn) + " tentative(s) pour trouver le code secret.\n");
             continuer = true;
         }
         return continuer;
@@ -250,10 +240,8 @@ public class Affichage {
         String[] resultat2 = getResult().transformerNumerosEnCouleurs(tableau2, nber);
         String joinedresult1 = String.join(",", resultat1);
         String joinedresult2 = String.join(",", resultat2);
-        System.out.println();
-        System.out.println("les solutions étaient : ");
-        System.out.println("Le code  " + joinedresult1 + "  pour le JOUEUR");
-        System.out.println("Le code  " + joinedresult2 + "  pour l'ORDINATEUR");
+        System.out.println("\nles solutions étaient : ");
+        System.out.println("Le code  " + joinedresult1 + "  pour le JOUEUR"+"\nLe code  " + joinedresult2 + "  pour l'ORDINATEUR");
         System.out.println("Le nombre de tours effectués: " + turn);
     }
 
@@ -294,8 +282,7 @@ public class Affichage {
                     break;
             }
         }
-        System.out.println();
-        System.out.println("Rentrez la lettre entre parenthèse pour sélectionner la couleur !!!");
+        System.out.println("\nRentrez la lettre entre parenthèse pour sélectionner la couleur !!!");
     }
 
     /**
@@ -326,8 +313,7 @@ public class Affichage {
      */
 
     public void saisirLesChiffresDuCode(int x) {
-        System.out.println();
-        System.out.println(" *********************** JOUEUR DEFENSEUR *****************************************************");
+        System.out.println("\n *********************** JOUEUR DEFENSEUR *****************************************************");
         System.out.println("Vous êtes le défenseur et vous devez choisir votre code secret en toute discrétion !!!");
         System.out.println("Vous devez taper un nombre de " + x + " chiffres pour votre code secret");
     }
@@ -338,8 +324,7 @@ public class Affichage {
      * @param x number of colors
      */
     public void saisirLesCouleursDuCode(int x) {
-        System.out.println();
-        System.out.println(" *********************** JOUEUR DEFENSEUR *****************************************************");
+        System.out.println("\n *********************** JOUEUR DEFENSEUR *****************************************************");
         System.out.println("Vous êtes le défenseur et vous devez choisir votre code secret en toute discrétion !!!");
         System.out.println("Vous devez sélectionner un nombre de " + x + " couleurs parmi les couleurs proposées ci-dessous");
     }
@@ -349,8 +334,7 @@ public class Affichage {
      * @param Choice the choice in String
      */
     public void choixDeLaCombinaison(String Choice){
-        System.out.println("Vous avez choisi la combinaison suivante: " + Choice);
-        System.out.println();
+        System.out.println("Vous avez choisi la combinaison suivante: " + Choice+"\n");
     }
 
     /**
@@ -358,8 +342,7 @@ public class Affichage {
      */
     public void affichageModeDeJeu(){
         System.out.println("A quel mode de jeu voulez-vous jouer? ");
-        System.out.println();
-        System.out.println("1 Mode Challenger");
+        System.out.println("\n1 Mode Challenger");
         System.out.println("2 Mode Défenseur");
         System.out.println("3 Mode Duel");
     }
@@ -380,8 +363,7 @@ public class Affichage {
                 System.out.println("Vous avez choisi de jouer au Mode Duel");
                 break;
             default:
-                System.out.println("Vous n'avez pas saisi le bon numéro pour le choix de votre jeu !!!");
-                System.out.println("Ressaisissez votre choix de jeu");
+                System.out.println("Vous n'avez pas saisi le bon numéro pour le choix de votre jeu !!!\nRessaisissez votre choix de jeu");
                 break;
         }
     }
@@ -391,8 +373,7 @@ public class Affichage {
      */
     public void affichageDesJeux(){
         System.out.println("A quel jeu voulez-vous jouer? ");
-        System.out.println();
-        System.out.println("1 RECHERCHE PLUS OU MOINS ");
+        System.out.println("\n1 RECHERCHE PLUS OU MOINS ");
         System.out.println("2 MASTERMIND");
         System.out.println("3 QUITTER");
     }
@@ -413,10 +394,45 @@ public class Affichage {
                 System.out.println("Vous avez choisi de quitter le jeu, au revoir !!!");
                 break;
             default:
-                System.out.println("Vous n'avez pas saisi le bon numéro pour le choix de votre jeu !!!");
-                System.out.println("Ressaisissez votre choix de jeu");
+                System.out.println("Vous n'avez pas saisi le bon numéro pour le choix de votre jeu !!!\nRessaisissez votre choix de jeu");
                 break;
         }
+    }
+
+    /**
+     * Method to print message as soon as the number of selected characters is too many
+     * @param x number of numbers
+     */
+    public void tropDeCaracteresChoisisChiffres(int x){
+        System.out.println("vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
+        System.out.println("retapez un nouveau code à " + x + " chiffre(s) svp !");
+    }
+
+    /**
+     * Method to print message as soon as the number of selected characters is too many
+     * @param x number of colors
+     */
+    public void tropDeCaracteresChoisisCouleurs(int x){
+        System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
+        System.out.println("retapez un nouveau code à " + x + " couleur(s) svp !");
+    }
+
+    /**
+     * Method to print message as soon as the number of selected characters is not enough
+     * @param x number of numbers
+     */
+    public void pasAssezDeCaracteresChoisisChiffres(int x){
+        System.out.println("vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
+        System.out.println("retapez un nouveau code à " + x + " chiffre(s) svp !");
+    }
+
+    /**
+     * Method to print message as soon as the number of selected characters is not enough
+     * @param x number of colors
+     */
+    public void pasAssezDeCaracteresChoisisCouleurs(int x){
+        System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
+        System.out.println("retapez " + x + " couleurs(s) svp !");
     }
 
 

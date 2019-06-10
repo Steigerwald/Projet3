@@ -7,13 +7,12 @@ this Java program is a game in which you can choice between two games in order t
 ## Installation
 
 Install the package JeuRechercheCode
-Use the IDLE or InteliJ in order to run the program. Launch from the Main Class.
+Use InteliJ or equivalent in order to run the program. Launch from the Main Class.
 
 ## Usage
 
 ```
-Java
-and Maven with the Log4J
+Maven and Java with the Log4J
 ```
 
 ## Contributing

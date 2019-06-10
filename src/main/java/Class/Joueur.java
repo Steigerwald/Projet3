@@ -90,13 +90,11 @@ public class Joueur {
 
         if ((rep.length()) > x) {
             logger.error("trop de caractères saisis");
-            System.out.println("vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à " + x + " chiffre(s) svp !");
+            getJeu().tropDeCaracteresChoisisChiffres(x);
             value = true;
         } else if (rep.length() < x) {
             logger.error("pas assez de caractères saisis");
-            System.out.println("vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à " + x + " chiffre(s) svp !");
+            getJeu().pasAssezDeCaracteresChoisisChiffres(x);
             value = true;
         } else {
             value = verificationSaisieChiffre(rep);
@@ -116,13 +114,11 @@ public class Joueur {
         boolean vrai = false;
         if ((rep.length()) > x) {
             logger.error("trop de caractères saisis");
-            System.out.println(" vous avez choisi trop de caractères, vous ne devez saisir que " + x + " caractère(s)");
-            System.out.println("retapez un nouveau code à " + x + " couleur(s) svp !");
+            getJeu().tropDeCaracteresChoisisCouleurs(x);
             vrai = true;
         } else if (rep.length() < x) {
             logger.error("pas assez de caractères saisis");
-            System.out.println(" vous n'avez pas choisi assez de caractères, vous devez saisir " + x + " caractère(s)");
-            System.out.println("retapez " + x + " couleurs(s) svp !");
+            getJeu().pasAssezDeCaracteresChoisisCouleurs(x);
             vrai = true;
         } else if (verificationSaisieLettre(rep)) {
             logger.error("erreur de caractères saisis");

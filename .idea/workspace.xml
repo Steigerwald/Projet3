@@ -3,19 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e3c6dde4-8e42-4354-8b9c-aaa2b4fe582f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Class/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Affichage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Attaquant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Attaquant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Combinaison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Combinaison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Class/Defenseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Defenseur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Class/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Class/Masterminnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Masterminnd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Class/Ordinateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Ordinateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enum/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enum/Colors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ressources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ressources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/java/Class/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/java/Class/Joueur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/ressources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/ressources/log4j.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,17 +29,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Class/Affichage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6868">
-              <caret line="404" column="25" lean-forward="true" selection-start-line="404" selection-start-column="25" selection-end-line="404" selection-end-column="25" />
+            <state relative-caret-position="-516">
+              <caret line="400" lean-forward="true" selection-start-line="400" selection-end-line="400" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#20392#20393#0" expanded="true" />
-                <element signature="e#20419#20420#0" expanded="true" />
-                <element signature="e#20457#20458#0" expanded="true" />
-                <element signature="e#20486#20487#0" expanded="true" />
+                <element signature="e#21396#21397#0" expanded="true" />
+                <element signature="e#21423#21424#0" expanded="true" />
+                <element signature="e#21461#21462#0" expanded="true" />
+                <element signature="e#21490#21491#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,18 +55,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Enum/Colors.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Class/Combinaison.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="932">
+            <state relative-caret-position="-1304">
               <caret line="105" column="7" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,10 +67,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Class/Joueur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="2057">
+              <caret line="121" column="24" lean-forward="true" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Class/Masterminnd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="258">
+              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Class/Ordinateur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4097">
-              <caret line="245" column="5" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
+            <state relative-caret-position="3791">
+              <caret line="223" column="25" lean-forward="true" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3145">
-              <caret line="247" selection-start-line="247" selection-end-line="247" />
+            <state relative-caret-position="731">
+              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,16 +192,16 @@
         <option value="$PROJECT_DIR$/src/main/ressources/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Enum/Colors.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Combinaison.java" />
         <option value="$PROJECT_DIR$/src/main/ressources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Attaquant.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Defenseur.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Class/Masterminnd.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Ordinateur.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Class/Masterminnd.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Class/Joueur.java" />
         <option value="$PROJECT_DIR$/src/main/java/Class/Affichage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Class/Joueur.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -245,6 +238,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,12 +296,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560076407023" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560152429462" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -393,10 +386,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32980332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33509833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -409,10 +402,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49848256" weight="0.32885906" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49848256" weight="0.32843137" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4939302" weight="0.33006537" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51138085" side_tool="true" weight="0.3338926" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32885906" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32843137" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49241275" weight="0.32843137" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Maven" order="1" weight="0.1096823" />
@@ -502,13 +495,6 @@
     <entry file="file://$PROJECT_DIR$/JeuRechercheCode.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ressources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -540,6 +526,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Defenseur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Affichage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-516">
+          <caret line="400" lean-forward="true" selection-start-line="400" selection-end-line="400" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#21396#21397#0" expanded="true" />
+            <element signature="e#21423#21424#0" expanded="true" />
+            <element signature="e#21461#21462#0" expanded="true" />
+            <element signature="e#21490#21491#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Class/Attaquant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -549,7 +563,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Class/Combinaison.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
+        <state relative-caret-position="-1304">
           <caret line="105" column="7" selection-start-line="105" selection-start-column="7" selection-end-line="105" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -557,27 +571,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Defenseur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Class/Joueur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Masterminnd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="2057">
+          <caret line="121" column="24" lean-forward="true" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -586,8 +583,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Class/Ordinateur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4097">
-          <caret line="245" column="5" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
+        <state relative-caret-position="3791">
+          <caret line="223" column="25" lean-forward="true" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Masterminnd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -596,24 +603,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Class/Rechercheplus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3145">
-          <caret line="247" selection-start-line="247" selection-end-line="247" />
+        <state relative-caret-position="731">
+          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Class/Affichage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6868">
-          <caret line="404" column="25" lean-forward="true" selection-start-line="404" selection-start-column="25" selection-end-line="404" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#20392#20393#0" expanded="true" />
-            <element signature="e#20419#20420#0" expanded="true" />
-            <element signature="e#20457#20458#0" expanded="true" />
-            <element signature="e#20486#20487#0" expanded="true" />
           </folding>
         </state>
       </provider>

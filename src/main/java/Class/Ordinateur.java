@@ -21,8 +21,7 @@ public class Ordinateur extends Affichage {
      * @return the secret code number as array of integer
      */
     public int[] saisirCodeSecret(int x, int y) {
-        System.out.println();
-        System.out.println(" ******************* L'ORDINATEUR CHOISIT UN CODE SECRET **********************************");
+        System.out.println("\n ******************* L'ORDINATEUR CHOISIT UN CODE SECRET **********************************");
         System.out.println("L'ordinateur a fait son choix de " + x + " chiffres pour le code secret.");
         int[] tab = new int[x];
         for (int counter = 0; counter < x; counter++) {
@@ -41,8 +40,7 @@ public class Ordinateur extends Affichage {
      * @return the secret code number as array of integer
      */
     public int[] saisirCodeSecretMaster(int x, int y) {
-        System.out.println();
-        System.out.println(" ****************** L'ORDINATEUR CHOISIT SES COULEURS POUR LE CODE SECRET *******************");
+        System.out.println("\n ****************** L'ORDINATEUR CHOISIT SES COULEURS POUR LE CODE SECRET *******************");
         System.out.println("L'ordinateur a fait son choix de ses " + x + " couleurs pour son code secret !!!");
         int[] tab = new int[x];
         for (int counter = 0; counter < x; counter++) {
@@ -61,9 +59,7 @@ public class Ordinateur extends Affichage {
      * @return the purposed code numbers
      */
     public int[] trouverCodeSecret(int x, int y) {
-        System.out.println();
-        System.out.println(" ***************** L'ORDINATEUR COMMENCE A CHERCHER VOTRE CODE SECRET ***********************");
-        System.out.println();
+        System.out.println("\n ***************** L'ORDINATEUR COMMENCE A CHERCHER VOTRE CODE SECRET ***********************\n");
         int[] tab = new int[x];
         for (int counter = 0; counter < x; counter++) {
             int nbreH = 1 + (int) (Math.random() * y);
@@ -139,8 +135,7 @@ public class Ordinateur extends Affichage {
      * Method to print that the computer will purpose a neuw code
      */
     public void affichageOrdiPropose() {
-        System.out.println();
-        System.out.println("*************** L'ORDINATEUR A CHERCHE ET PROPOSE UN CODE **********************************");
+        System.out.println("\n*************** L'ORDINATEUR A CHERCHE ET PROPOSE UN CODE **********************************");
         System.out.println(" *********************** RESULTAT **********************************************************");
     }
 
@@ -150,8 +145,7 @@ public class Ordinateur extends Affichage {
      * @param turn number of allowed turns in order to find the secret code numbers
      */
     public void victoireOrdinateur(int turn) {
-        System.out.println();
-        System.out.println("******************** L'ORDINATEUR A GAGNE  **************************************************");
+        System.out.println("\n******************** L'ORDINATEUR A GAGNE  **************************************************");
         System.out.println("Bravo a l'Ordinateur qui a trouvé le code secret en " + turn + " tour(s)!!");
     }
 
@@ -161,8 +155,7 @@ public class Ordinateur extends Affichage {
      * @param tableau1 the secret code number
      */
     public void defaiteOrdinateur(int[] tableau1) {
-        System.out.println();
-        System.out.println("******************** L'ORDINATEUR A PERDU ***************************************************");
+        System.out.println("\n******************** L'ORDINATEUR A PERDU ***************************************************");
         System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé.");
         String[] tabC = getResult().transformerNumerosEnCouleurs(tableau1, getNber());
         String joinedarray1 = String.join(",", tabC);
@@ -175,8 +168,7 @@ public class Ordinateur extends Affichage {
      * @param tableau1 the secret code number
      */
     public void defaiteOrdinateurMaster(int[] tableau1) {
-        System.out.println();
-        System.out.println("******************** L'ORDINATEUR A PERDU ***************************************************");
+        System.out.println("\n******************** L'ORDINATEUR A PERDU ***************************************************");
         System.out.println(" Cet ordinateur est nul!!, le nombre de tentatives autorisées est dépassé.");
         String joinedarray1 = Arrays.stream(tableau1).mapToObj(String::valueOf).collect(Collectors.joining(""));
         System.out.println("La solution était: " + joinedarray1);
@@ -201,8 +193,7 @@ public class Ordinateur extends Affichage {
             defaiteOrdinateur(tableau1);
             continuer = false;
         } else {
-            System.out.println("L'ORDINATEUR a encore " + (tmax - turn) + " tentative(s) pour trouver le code secret.");
-            System.out.println();
+            System.out.println("L'ORDINATEUR a encore " + (tmax - turn) + " tentative(s) pour trouver le code secret.\n");
             continuer = true;
         }
         return continuer;
@@ -227,8 +218,7 @@ public class Ordinateur extends Affichage {
             defaiteOrdinateurMaster(tableau1);
             continuer = false;
         } else {
-            System.out.println("L'ORDINATEUR a encore " + (tmax - turn) + " tentative(s) pour trouver les couleurs du code secret.");
-            System.out.println();
+            System.out.println("L'ORDINATEUR a encore " + (tmax - turn) + " tentative(s) pour trouver les couleurs du code secret.\n");
             continuer = true;
         }
         return continuer;

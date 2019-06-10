@@ -33,8 +33,7 @@ public class Rechercheplus {
      * Method to launch the Rechercheplus game
      */
     public void lancementJeuRecherchePlus() {
-        System.out.println("====================== JEU DU RECHERCHE PLUS OU MOINS  =====================================");
-        System.out.println();
+        System.out.println("====================== JEU DU RECHERCHE PLUS OU MOINS  =====================================\n");
         int mode = getPremierJoueur().choixduModejeu();
         switch (mode) {
             case 1:

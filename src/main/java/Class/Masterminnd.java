@@ -34,8 +34,7 @@ public class Masterminnd {
      * Method to launch the Mastermind game
      */
     public void lancementJeuMastermind() {
-        System.out.println("========================== JEU MASTERMIND  ============================");
-        System.out.println();
+        System.out.println("========================== JEU MASTERMIND  ============================\n");
         int mode = getPremierJoueur().choixduModejeu();
         switch (mode) {
             case 1:
